@@ -1,0 +1,70 @@
+﻿@using FinalProject.ViewModel;
+@{
+    ViewData["Title"] = "Login";
+}
+
+@model LoginViewModel
+
+<main class="main">
+    <nav class="breadcrumb-nav">
+        <div class="container">
+            <ul class="breadcrumb">
+                <li><a href="demo1.html"><i class="d-icon-home"></i></a></li>
+                <li><a href="shop.html">Riode Shop</a></li>
+                <li>My Account</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="page-content mt-6 pb-2 mb-10">
+        <div class="container">
+            <div class="login-popup">
+                <div class="form-box">
+                    <div class="tab tab-nav-simple tab-nav-boxed form-tab">
+                        <ul class="nav nav-tabs nav-fill align-items-center border-no justify-content-center mb-5" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active border-no lh-1 ls-normal" href="#signin">Login</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="signin">
+                                <form method="post">
+                                    <div class="form-group mb-3">
+                                        <input asp-for="UsernameOrEmail" class="form-control" placeholder="Username or Email address" />
+                                        <span asp-validation-for="UsernameOrEmail" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <input asp-for="Password" class="form-control" placeholder="Password" />
+                                        <span asp-validation-for="Password" class="text-danger"></span>
+
+                                    </div>
+                                    <div class="form-footer">
+                                        <div class="form-checkbox">
+                                            <input asp-for="RememberMe" class="custom-checkbox" id="signin-remember"/>
+                                            <label class="form-control-label" for="signin-remember">
+                                                Remember me
+                                            </label>
+                                        </div>
+                                        <a asp-action="ForgotPassword" class="lost-link">Forgotten password?</a>
+                                    </div>
+                                    <div asp-validation-summary="ModelOnly" class="text text-danger"></div>
+                                    <div>
+                                        <button class="btn btn-dark btn-block btn-rounded" type="submit">Login</button>
+                                    </div>                                   
+                                </form>
+                                <div class="form-choice text-center">
+                                    <label class="ls-m">or Login With</label>
+                                    <div class="social-links">
+                                        <a href="#" class="social-link social-google fab fa-google border-no"></a>
+                                        <a href="#" class="social-link social-facebook fab fa-facebook-f border-no"></a>
+                                        <a href="#" class="social-link social-twitter fab fa-twitter border-no"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+

@@ -1,0 +1,47 @@
+﻿@using FinalProject.Models;
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+@model List<Product>
+
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">                                    
+                        <a class="btn btn-primary" asp-action="Create">Create</a>                   
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Image</th>
+                                    <th>Title</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var product in Model)
+                                {
+                                    <tr>
+                                        <td><img @* src="~/assets/images/website-images//@product.Image" *@ /></td>
+                                        <td>@product.Title</td>
+                                        <td>
+                                            <a class="btn btn-info" asp-action="Detail" asp-route-id="@product.Id">Detail</a>
+                                            <a class="btn btn-warning" asp-action="Update" asp-route-id="@product.Id">Update</a>
+                                            <a class="btn btn-danger" asp-action="Delete" asp-route-id="@product.Id">Delete</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
