@@ -1,29 +1,33 @@
 ﻿using FinalProject.Models;
-using System.ComponentModel.DataAnnotations;
+using Microsoft.Build.Framework;
 
 namespace FinalProject.ViewModel
 {
     public class ProductViewModel
     {
+        [Required]
         public string Title { get; set; } = null!;
+        [Required]
         public double Price { get; set; }
-        public double OldPrice { get; set; }
-        [Range(0, 5, ErrorMessage = "Value must be between 0 and 5")]
+        public double OldPrice { get; set; } = 0;
+        [Required]
         public double Rating { get; set; }
+        [Required]
         public double SKU { get; set; }
         public bool isStocked { get; init; }
-        public string Description { get; set; } = null!;
-        public string Features { get; set; } = null!;
-        public string Material { get; set; } = null!;
-        public string ClaimedSize { get; set; } = null!;
-        public string RecommendedUse { get; set; } = null!;
-        public string Manufacturer { get; set; } = null!;
+        public bool isDeleted { get; init; } = false;
 
-        public int BrandId { get; set; }
-        public Brand Brand { get; set; } = null!;
+        public string Description { get; set; } = "TestDescription";
 
-        public int CategoryId { get; set; }
-        public Category Category { get; set; } = null!;
-        public IFormFile[] Images { get; set; } = null!;
+        public string Features { get; set; } = "TestFeatures";
+
+        public string Material { get; set; } = "TestMaterial";
+
+        public string ClaimedSize { get; set; } = "46";
+
+        public string RecommendedUse { get; set; } = "TestRecommendedUse";
+
+        public string Manufacturer { get; set; } = "TestManufacturer";
+
     }
 }

@@ -36,7 +36,8 @@ public class ProductController : Controller
             Material = products.Material,
             ClaimedSize = products.ClaimedSize,
             RecommendedUse = products.RecommendedUse,
-            Manufacturer = products.Manufacturer
+            Manufacturer = products.Manufacturer,
+            
         };
         return View(model);
     }

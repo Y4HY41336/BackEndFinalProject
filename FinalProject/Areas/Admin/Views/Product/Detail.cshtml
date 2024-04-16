@@ -1,0 +1,33 @@
+﻿@using FinalProject.Models;
+
+
+@{
+    ViewData["Title"] = "Detail";
+}
+
+@model Product
+
+<div class="content-wrapper">
+    <div class="row d-flex">
+        <div class="col-lg-6 ">
+            <div class="card" style="width: 18rem; ">
+                <img class="card-img-top" src="\assets\images\cart\product-1.jpg" style="max-width: 300px; max-height: 300px" alt="Card image cap">
+                <div class="card-body">
+                    <h2 class="card-title d-flex justify-content-center align-items-center">@Model.Title</h2>
+                    <h5>Price: $@Model.Price</h5>
+                    <h5>Features: @Model.Features</h5>
+                    <h5>Material: @Model.Material</h5>
+                    <h5>Claimed size: @Model.ClaimedSize</h5>
+                    <h5>Recommended use: @Model.RecommendedUse</h5>
+                    <h5>Manufacturer: @Model.Manufacturer</h5>
+                    <p class="card-text">Description: @Model.Description</p>
+                    <div class="btn-box d-flex  mt-3 justify-content-center align-items-center">
+                        <a asp-action="Index" class="btn btn-primary">Go Back</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

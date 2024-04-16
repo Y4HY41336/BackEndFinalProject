@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.Build.Framework;
+using System.ComponentModel.DataAnnotations;
 
 namespace FinalProject.Models
 {
@@ -12,14 +13,15 @@ namespace FinalProject.Models
         public double Rating { get; set; }
         public double SKU { get; set; }
 		public bool isStocked { get; init; }
-        public string Description { get; set; } = null!;
-		public string Features { get; set; } = null!;
-		public string Material { get; set; } = null!;
-		public string ClaimedSize { get; set; } = null!;
-		public string RecommendedUse { get; set; } = null!;
-		public string Manufacturer { get; set; } = null!;
+        public bool isDeleted { get; init; }
+        public string Description { get; set; }
+		public string Features { get; set; }
+		public string Material { get; set; }
+        public string ClaimedSize { get; set; }
+		public string RecommendedUse { get; set; }
+		public string Manufacturer { get; set; }
 
-		public int BrandId { get; set; }
+        public int BrandId { get; set; }
         public Brand Brand { get; set; }
 
         public int CategoryId { get; set; }
