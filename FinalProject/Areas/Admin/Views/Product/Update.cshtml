@@ -1,11 +1,11 @@
 ﻿@using FinalProject.Models;
-@using FinalProject.ViewModel;
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Update";
 }
 
-@model ProductViewModel
+@model Product
+
 
 <div class="content-wrapper">
     <div class="row">
@@ -30,66 +30,48 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">OldPrice</label>
-                            <input  class="form-control" asp-for="OldPrice" placeholder="OldPrice">
+                            <input class="form-control" asp-for="OldPrice" placeholder="OldPrice">
                             <span asp-validation-for="OldPrice" class="text-danger"></span>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Rating</label>
-                            <input  class="form-control" asp-for="Rating" placeholder="Rating">
+                            <input class="form-control" asp-for="Rating" placeholder="Rating">
                             <span asp-validation-for="Rating" class="text-danger"></span>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">SKU</label>
-                            <input  class="form-control" asp-for="SKU" placeholder="SKU">
+                            <input class="form-control" asp-for="SKU" placeholder="SKU">
                             <span asp-validation-for="SKU" class="text-danger"></span>
-                        </div>                    
+                        </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Description</label>
-                            <input  class="form-control" asp-for="Description" placeholder="Description">
+                            <input class="form-control" asp-for="Description" placeholder="Description">
                             <span asp-validation-for="Description" class="text-danger"></span>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Features</label>
-                            <input  class="form-control" asp-for="Features" placeholder="Features">
+                            <input class="form-control" asp-for="Features" placeholder="Features">
                             <span asp-validation-for="Features" class="text-danger"></span>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Material</label>
-                            <input  class="form-control" asp-for="Material" placeholder="Material">
+                            <input class="form-control" asp-for="Material" placeholder="Material">
                             <span asp-validation-for="Description" class="text-danger"></span>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">ClaimedSize</label>
-                            <input  class="form-control" asp-for="ClaimedSize" placeholder="ClaimedSize">
+                            <input class="form-control" asp-for="ClaimedSize" placeholder="ClaimedSize">
                             <span asp-validation-for="Description" class="text-danger"></span>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">RecommendedUse</label>
-                            <input  class="form-control" asp-for="RecommendedUse" placeholder="RecommendedUse">
+                            <input class="form-control" asp-for="RecommendedUse" placeholder="RecommendedUse">
                             <span asp-validation-for="RecommendedUse" class="text-danger"></span>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Manufacturer</label>
-                            <input  class="form-control" asp-for="Manufacturer" placeholder="Manufacturer">
+                            <input class="form-control" asp-for="Manufacturer" placeholder="Manufacturer">
                             <span asp-validation-for="Manufacturer" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlSelect2">Categories</label>
-                            <select class="form-control" id="exampleFormControlSelect2" name="categoryId">
-                                @foreach (Category category in ViewBag.Categories)
-                                {
-                                    <option value="@category.Id">@category.CategoryName</option>
-                                }
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlSelect2">Categories</label>
-                            <select class="form-control" id="exampleFormControlSelect2" name="categoryId">
-                                @foreach (Brand brand in ViewBag.Brands)
-                                {
-                                    <option value="@brand.Id">@brand.BrandName</option>
-                                }
-                            </select>
                         </div>
                         <button type="submit" class="btn btn-primary mr-2">Submit</button>
                         <button class="btn btn-light">Cancel</button>

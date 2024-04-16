@@ -26,8 +26,10 @@ public class ProductController : Controller
 
         return View(products);
     }
-    public IActionResult Create()
+public async Task<IActionResult> Create()
     {
+        ViewBag.Categories = await _context.Categories.ToListAsync();
+        ViewBag.Brands = await _context.Brands.ToListAsync();
         if (!ModelState.IsValid)
         {
             return View();
@@ -37,6 +39,8 @@ public class ProductController : Controller
     [HttpPost]
     public async Task<IActionResult> Create(ProductViewModel products)
     {
+        ViewBag.Categories = await _context.Categories.ToListAsync();
+        ViewBag.Brands = await _context.Brands.ToListAsync();
         if (!ModelState.IsValid)
         {
             return View();
@@ -54,8 +58,8 @@ public class ProductController : Controller
             Manufacturer = products.Manufacturer,
             ClaimedSize = products.ClaimedSize,
             RecommendedUse = products.RecommendedUse,
-            CategoryId = 1,
-            BrandId = 2,
+            CategoryId = products.CategoryId,
+            BrandId = products.BrandId,
             isStocked = true,
             isDeleted = false
 
@@ -103,5 +107,45 @@ public class ProductController : Controller
             return NotFound();
         }
         return View(products);
+    }
+    public async Task<IActionResult> Update(int id)
+    {
+        var products = await _context.Products.FirstOrDefaultAsync(s => s.Id == id);
+        if (products == null)
+        {
+            return NotFound();
+        }
+        return View(products);
+    }
+    [HttpPost]
+    public async Task<IActionResult> Update(int id, Product products)
+    {
+        var updateProducts = await _context.Products.FirstOrDefaultAsync(s => s.Id == id);
+        if (products == null)
+        {
+            return NotFound();
+        }
+        //if (!ModelState.IsValid)
+        //{
+        //    return View();
+        //}
+
+        updateProducts.Title = products.Title;
+        updateProducts.Price = products.Price;
+        updateProducts.OldPrice = products.OldPrice;
+        updateProducts.Rating = products.Rating;
+        updateProducts.SKU = products.SKU;
+        updateProducts.Description = products.Description;
+        updateProducts.Features = products.Features;
+        updateProducts.Material = products.Material;
+        updateProducts.Manufacturer = products.Manufacturer;
+        updateProducts.ClaimedSize = products.ClaimedSize;
+        updateProducts.RecommendedUse = products.RecommendedUse;
+        updateProducts.CategoryId = 1;
+        updateProducts.BrandId = 2;
+
+
+        await _context.SaveChangesAsync();
+        return RedirectToAction("Index");
     }
 }

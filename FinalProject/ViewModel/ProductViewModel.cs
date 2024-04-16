@@ -14,7 +14,7 @@ namespace FinalProject.ViewModel
         public double Rating { get; set; }
         [Required]
         public double SKU { get; set; }
-        public bool isStocked { get; init; }
+        public bool isStocked { get; init; } = true;
         public bool isDeleted { get; init; } = false;
 
         public string Description { get; set; } = "TestDescription";
@@ -28,6 +28,7 @@ namespace FinalProject.ViewModel
         public string RecommendedUse { get; set; } = "TestRecommendedUse";
 
         public string Manufacturer { get; set; } = "TestManufacturer";
-
+        public int CategoryId { get; set; }
+        public int BrandId { get; set; }
     }
 }

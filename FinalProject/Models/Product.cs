@@ -12,8 +12,8 @@ namespace FinalProject.Models
         [Range(0, 5, ErrorMessage = "Value must be between 0 and 5")]
         public double Rating { get; set; }
         public double SKU { get; set; }
-		public bool isStocked { get; init; }
-        public bool isDeleted { get; init; }
+        public bool isStocked { get; init; } = true;
+        public bool isDeleted { get; init; } = false;
         public string Description { get; set; }
 		public string Features { get; set; }
 		public string Material { get; set; }
