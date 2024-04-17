@@ -1,5 +1,6 @@
 ﻿using FinalProject.Areas.Admin.ViewModel;
 using FinalProject.Context;
+using FinalProject.Helpers;
 using FinalProject.Models;
 using FinalProject.ViewModel;
 using Microsoft.AspNetCore.Mvc;
@@ -40,10 +41,25 @@ public class BrandController : Controller
         {
             return View();
         }
+        if (brand.Image.CheckFileSize(3000))
+        {
+            ModelState.AddModelError("Image", "Too Big!");
+            return View();
+        }
+        if (!brand.Image.CheckFileType("image/"))
+        {
+            ModelState.AddModelError("Image", "sekil olsun");
+            return View();
+        }
+        string fileName = $"{Guid.NewGuid()}-{brand.Image.FileName}";
+        string path = Path.Combine(_webHostEnvironment.WebRootPath, "assets", "images", "brands", fileName);
+        FileStream stream = new FileStream(path, FileMode.Create);
+        await brand.Image.CopyToAsync(stream);
+        stream.Dispose();
         Brand newbrand = new()
         {
-            BrandName = brand.BrandName
-
+            BrandName = brand.BrandName,
+            Image = fileName
         };
         await _context.Brands.AddAsync(newbrand);
         await _context.SaveChangesAsync();

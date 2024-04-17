@@ -19,6 +19,11 @@
                             <input class="form-control" asp-for="BrandName" placeholder="Title">
                             <span asp-validation-for="BrandName" class="text-danger"></span>
                         </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Image</label>
+                            <input type="file" class="form-control" asp-for="Image" placeholder="Image">
+                            <span asp-validation-for="Image" class="text-danger"></span>
+                        </div>
                         <button type="submit" class="btn btn-primary mr-2">Submit</button>
                         <button class="btn btn-light">Cancel</button>
                     </form>

@@ -6,5 +6,6 @@ namespace FinalProject.Areas.Admin.ViewModel
     {
         [Required]
         public string CategoryName { get; set; }
+        public IFormFile Image { get; set; }
     }
 }

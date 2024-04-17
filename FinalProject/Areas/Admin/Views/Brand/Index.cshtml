@@ -22,15 +22,15 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach (var category in Model)
+                                @foreach (var brand in Model)
                                 {
                                     <tr>
-                                        <td><img @* src="~/assets/images/website-images//@product.Image" *@ /></td>
-                                        <td>@category.BrandName</td>
+                                        <td><img src="~/assets/images/brands/@brand.Image" /></td>
+                                        <td>@brand.BrandName</td>
                                         <td>
-                                            <a class="btn btn-info" asp-action="Detail" asp-route-id="@category.Id">Detail</a>
-                                            <a class="btn btn-warning" asp-action="Update" asp-route-id="@category.Id">Update</a>
-                                            <a class="btn btn-danger" asp-action="Delete" asp-route-id="@category.Id">Delete</a>
+                                            <a class="btn btn-info" asp-action="Detail" asp-route-id="@brand.Id">Detail</a>
+                                            <a class="btn btn-warning" asp-action="Update" asp-route-id="@brand.Id">Update</a>
+                                            <a class="btn btn-danger" asp-action="Delete" asp-route-id="@brand.Id">Delete</a>
                                         </td>
                                     </tr>
                                 }

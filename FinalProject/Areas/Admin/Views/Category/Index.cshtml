@@ -25,7 +25,7 @@
                                 @foreach (var category in Model)
                                 {
                                     <tr>
-                                        <td><img @* src="~/assets/images/website-images//@product.Image" *@ /></td>
+                                        <td><img  src="~/assets/images/categories/@category.Image"  /></td>
                                         <td>@category.CategoryName</td>
                                         <td>
                                             <a class="btn btn-info" asp-action="Detail" asp-route-id="@category.Id">Detail</a>

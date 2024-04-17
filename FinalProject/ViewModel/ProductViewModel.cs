@@ -30,5 +30,7 @@ namespace FinalProject.ViewModel
         public string Manufacturer { get; set; } = "TestManufacturer";
         public int CategoryId { get; set; }
         public int BrandId { get; set; }
+        public IFormFile PosterImage { get; set; }
+        public List<IFormFile> Images { get; set; }
     }
 }

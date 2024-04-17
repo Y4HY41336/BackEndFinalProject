@@ -1,5 +1,6 @@
 ﻿using FinalProject.Areas.Admin.ViewModel;
 using FinalProject.Context;
+using FinalProject.Helpers;
 using FinalProject.Models;
 using FinalProject.ViewModel;
 using Microsoft.AspNetCore.Mvc;
@@ -39,10 +40,25 @@ public class CategoryController : Controller
         {
             return View();
         }
+        if (category.Image.CheckFileSize(3000))
+        {
+            ModelState.AddModelError("Image", "Too Big!");
+            return View();
+        }
+        if (!category.Image.CheckFileType("image/"))
+        {
+            ModelState.AddModelError("Image", "sekil olsun");
+            return View();
+        }
+        string fileName = $"{Guid.NewGuid()}-{category.Image.FileName}";
+        string path = Path.Combine(_webHostEnvironment.WebRootPath, "assets", "images", "categories", fileName);
+        FileStream stream = new FileStream(path, FileMode.Create);
+        await category.Image.CopyToAsync(stream);
+        stream.Dispose();
         Category newcategory = new()
         {
-            CategoryName = category.CategoryName
-
+            CategoryName = category.CategoryName,
+            Image = fileName
         };
         await _context.Categories.AddAsync(newcategory);
         await _context.SaveChangesAsync();
