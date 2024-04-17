@@ -70,7 +70,6 @@ public async Task<IActionResult> Create()
     }
     public async Task<IActionResult> Delete(int id)
     {
-        
         var products = await _context.Products.FirstOrDefaultAsync(s => s.Id == id);
         if (products == null)
         {
@@ -83,7 +82,6 @@ public async Task<IActionResult> Create()
     [ActionName("Delete")]
     public async Task<IActionResult> DeleteProduct(int id)
     {
-        
         var products = await _context.Products.FirstOrDefaultAsync(s => s.Id == id);
         if (products == null)
         {
@@ -100,7 +98,6 @@ public async Task<IActionResult> Create()
     }
     public async Task<IActionResult> Detail(int id)
     {
-
         var products = await _context.Products.FirstOrDefaultAsync(s => s.Id == id);
         if (products == null)
         {
@@ -110,6 +107,8 @@ public async Task<IActionResult> Create()
     }
     public async Task<IActionResult> Update(int id)
     {
+        ViewBag.Categories = await _context.Categories.ToListAsync();
+        ViewBag.Brands = await _context.Brands.ToListAsync();
         var products = await _context.Products.FirstOrDefaultAsync(s => s.Id == id);
         if (products == null)
         {
@@ -118,17 +117,19 @@ public async Task<IActionResult> Create()
         return View(products);
     }
     [HttpPost]
-    public async Task<IActionResult> Update(int id, Product products)
+    public async Task<IActionResult> Update(int id, ProductViewModel products)
     {
+        ViewBag.Categories = await _context.Categories.ToListAsync();
+        ViewBag.Brands = await _context.Brands.ToListAsync();
         var updateProducts = await _context.Products.FirstOrDefaultAsync(s => s.Id == id);
         if (products == null)
         {
             return NotFound();
         }
-        //if (!ModelState.IsValid)
-        //{
-        //    return View();
-        //}
+        if (!ModelState.IsValid)
+        {
+            return View();
+        }
 
         updateProducts.Title = products.Title;
         updateProducts.Price = products.Price;
@@ -141,8 +142,8 @@ public async Task<IActionResult> Create()
         updateProducts.Manufacturer = products.Manufacturer;
         updateProducts.ClaimedSize = products.ClaimedSize;
         updateProducts.RecommendedUse = products.RecommendedUse;
-        updateProducts.CategoryId = 1;
-        updateProducts.BrandId = 2;
+        updateProducts.CategoryId = products.CategoryId;
+        updateProducts.BrandId = products.BrandId;
 
 
         await _context.SaveChangesAsync();

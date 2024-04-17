@@ -12,10 +12,7 @@
         <div class="col-md-6 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Default form</h4>
-                    <p class="card-description">
-                        Basic form layout
-                    </p>
+                    <h4 class="card-title">Update product</h4>
                     <form class="forms-sample" method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="exampleInputUsername1">Title</label>
@@ -73,8 +70,26 @@
                             <input class="form-control" asp-for="Manufacturer" placeholder="Manufacturer">
                             <span asp-validation-for="Manufacturer" class="text-danger"></span>
                         </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect2">Categories</label>
+                            <select class="form-control" id="exampleFormControlSelect2" name="categoryId">
+                                @foreach (Category category in ViewBag.Categories)
+                                {
+                                    <option value="@category.Id">@category.CategoryName</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect2">Brands</label>
+                            <select class="form-control" id="exampleFormControlSelect2" name="brandId">
+                                @foreach (Brand brand in ViewBag.Brands)
+                                {
+                                    <option value="@brand.Id">@brand.BrandName</option>
+                                }
+                            </select>
+                        </div>
                         <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                        <button class="btn btn-light">Cancel</button>
+                        <button asp-action="Index" class="btn btn-light">Cancel</button>
                     </form>
                 </div>
             </div>

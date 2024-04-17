@@ -1,0 +1,32 @@
+﻿@using FinalProject.Models;
+@using FinalProject.ViewModel;
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+@model Category
+
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-md-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Create new category</h4>
+                    <form class="forms-sample" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="exampleInputUsername1">Category Name</label>
+                            <input class="form-control" asp-for="CategoryName" placeholder="Title">
+                            <span asp-validation-for="CategoryName" class="text-danger"></span>
+                        </div>                   
+                        <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                        <button class="btn btn-light">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
