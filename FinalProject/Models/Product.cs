@@ -20,13 +20,13 @@ namespace FinalProject.Models
         public string ClaimedSize { get; set; }
 		public string RecommendedUse { get; set; }
 		public string Manufacturer { get; set; }
+        public string PosterImage { get; set; }
 
         public int BrandId { get; set; }
         public Brand Brand { get; set; }
 
         public int CategoryId { get; set; }
         public Category Category { get; set; }
-
 
     }
 }

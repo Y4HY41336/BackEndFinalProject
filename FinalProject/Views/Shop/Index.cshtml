@@ -152,7 +152,7 @@
                                 <div class="product">
                                     <figure class="product-media">
                                         <a asp-controller="Product" asp-action="ProductDetail" asp-route-id="@product.Id">
-                                            <img @* ProductImage *@ src="assets/images/shop/1.jpg" alt="product" width="280" height="315">
+                                            <img src="~/assets/images/shop/@product.PosterImage" src="assets/images/shop/1.jpg" alt="product" width="280" height="315">
                                         </a>
                                         <div class="product-action-vertical">
                                             <a href="#" class="btn-product-icon btn-cart" data-toggle="modal"

@@ -1,6 +1,6 @@
 ﻿using FinalProject.Areas.Admin.ViewModel;
 using FinalProject.Context;
-using FinalProject.Helpers;
+using FinalProject.Helpers.Extencions;
 using FinalProject.Models;
 using FinalProject.ViewModel;
 using Microsoft.AspNetCore.Mvc;

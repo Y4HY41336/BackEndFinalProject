@@ -1,7 +1,10 @@
-﻿using FinalProject.Models;
+﻿using FinalProject.Helpers.Enums;
+using FinalProject.Models;
 using FinalProject.ViewModel;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using ProniaP336.Helpers;
+using System.Data;
 
 namespace FinalProject.Controllers;
 
@@ -9,10 +12,12 @@ public class UserController : Controller
 {
     private readonly UserManager<AppUser> _userManager;
     private readonly SignInManager<AppUser> _signInManager;
-    public UserController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
+    private readonly IConfiguration _configuration;
+    public UserController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, IConfiguration configuration)
     {
         _userManager = userManager;
         _signInManager = signInManager;
+        _configuration = configuration;
     }
 
     public IActionResult Register()
@@ -44,8 +49,17 @@ public class UserController : Controller
             }
             return View();
         }
-        var user = model.UserName;
-        var signInResault = await _signInManager.PasswordSignInAsync(user, model.Password,false, false);
+        string token = await _userManager.GenerateEmailConfirmationTokenAsync(appUser);
+
+        string link = Url.Action("ConfirmEmail", "Auth", new { email = appUser.Email, token }, HttpContext.Request.Scheme, HttpContext.Request.Host.Value);
+
+        string body = $"<a href='{link}'>Confirm your email</a>";
+
+        EmailHelper emailHelper = new EmailHelper(_configuration);
+        await emailHelper.SendEmailAsync(new MailRequest { ToEmail = appUser.Email, Subject = "Confirm Email", Body = body });
+
+        await _userManager.AddToRoleAsync(appUser, Roles.User.ToString());
+
         return RedirectToAction("Index", "Home");
     }
 

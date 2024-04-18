@@ -173,6 +173,10 @@ namespace FinalProject.Migrations
                     b.Property<double>("OldPrice")
                         .HasColumnType("float");
 
+                    b.Property<string>("PosterImage")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<double>("Price")
                         .HasColumnType("float");
 

@@ -25,7 +25,7 @@
                                 @foreach (var product in Model)
                                 {
                                     <tr>
-                                        <td><img @* src="~/assets/images/website-images//@product.Image" *@ /></td>
+                                        <td><img src="~/assets/images/shop/@product.PosterImage" /></td>
                                         <td>@product.Title</td>
                                         <td>
                                             <a class="btn btn-info" asp-action="Detail" asp-route-id="@product.Id">Detail</a>

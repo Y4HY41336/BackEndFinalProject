@@ -37,7 +37,6 @@ public class AuthController : Controller
         {
             return View();
         }
-
         var user = await _userManager.FindByNameAsync(model.UsernameOrEmail);
         if (user == null)
         {
@@ -48,8 +47,13 @@ public class AuthController : Controller
                 return View();
             }
         }
+        if (!await _userManager.IsEmailConfirmedAsync(user))
+        {
+            ModelState.AddModelError("", "Please confirm your email address");
+            return View(model);
+        }
 
-        var signInResault = await _signInManager.PasswordSignInAsync(user, model.Password, model.RememberMe, false);
+        var signInResault = await _signInManager.PasswordSignInAsync(user.UserName, model.Password, model.RememberMe, false);
         if (!signInResault.Succeeded)
         {
             ModelState.AddModelError("", "Username/Email or Password incorrect");
@@ -72,4 +76,26 @@ public class AuthController : Controller
     {
         return View();
     }
+
+    public async Task<IActionResult> ConfirmEmail(ConfirmEmailViewModel model)
+    {
+        var user = await _userManager.FindByEmailAsync(model.Email);
+        if (user == null)
+            return NotFound();
+
+        if (await _userManager.IsEmailConfirmedAsync(user))
+            return BadRequest();
+
+        IdentityResult identityResult = await _userManager.ConfirmEmailAsync(user, model.Token);
+        if (identityResult.Succeeded)
+        {
+            TempData["ConfirmationMessage"] = "Your email successfully confirmed";
+            return RedirectToAction(nameof(Login));
+        }
+
+        return BadRequest();
+    }
+
+
+
 }

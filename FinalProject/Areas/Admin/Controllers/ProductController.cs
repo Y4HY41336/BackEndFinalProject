@@ -1,4 +1,5 @@
 ﻿using FinalProject.Context;
+using FinalProject.Helpers.Extencions;
 using FinalProject.Models;
 using FinalProject.ViewModel;
 using Microsoft.AspNetCore.Mvc;
@@ -41,25 +42,25 @@ public async Task<IActionResult> Create()
     {
         ViewBag.Categories = await _context.Categories.ToListAsync();
         ViewBag.Brands = await _context.Brands.ToListAsync();
-        //if (!modelstate.isvalid)
-        //{
-        //    return view();
-        //}
-        //if (products.image.checkfilesize(3000))
-        //{
-        //    modelstate.addmodelerror("image", "too big!");
-        //    return view();
-        //}
-        //if (!products.image.checkfiletype("image/"))
-        //{
-        //    modelstate.addmodelerror("image", "sekil olsun");
-        //    return view();
-        //}
-        //string filename = $"{guid.newguid()}-{products.image.filename}";
-        //string path = path.combine(_webhostenvironment.webrootpath, "assets", "images", "categories", filename);
-        //filestream stream = new filestream(path, filemode.create);
-        //await products.image.copytoasync(stream);
-        //stream.dispose();
+        if (!ModelState.IsValid)
+        {
+            return View();
+        }
+        if (products.PosterImage.CheckFileSize(3000))
+        {
+            ModelState.AddModelError("Image", "Too Big!");
+            return View();
+        }
+        if (!products.PosterImage.CheckFileType("image/"))
+        {
+            ModelState.AddModelError("Image", "sekil olsun");
+            return View();
+        }
+        string fileName = $"{Guid.NewGuid()}-{products.PosterImage.FileName}";
+        string path = Path.Combine(_webHostEnvironment.WebRootPath, "assets", "images", "shop", fileName);
+        FileStream stream = new FileStream(path, FileMode.Create);
+        await products.PosterImage.CopyToAsync(stream);
+        stream.Dispose();
         Product newproduct = new()
         {
             Title = products.Title,
@@ -75,10 +76,12 @@ public async Task<IActionResult> Create()
             RecommendedUse = products.RecommendedUse,
             CategoryId = products.CategoryId,
             BrandId = products.BrandId,
+            PosterImage = fileName,
             isStocked = true,
             isDeleted = false
 
         };
+
         await _context.Products.AddAsync(newproduct);
         await _context.SaveChangesAsync();
         return RedirectToAction("Index");
