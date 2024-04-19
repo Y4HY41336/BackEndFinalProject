@@ -24,15 +24,18 @@
                             <tbody>
                                 @foreach (var product in Model)
                                 {
-                                    <tr>
-                                        <td><img src="~/assets/images/shop/@product.PosterImage" /></td>
-                                        <td>@product.Title</td>
-                                        <td>
-                                            <a class="btn btn-info" asp-action="Detail" asp-route-id="@product.Id">Detail</a>
-                                            <a class="btn btn-warning" asp-action="Update" asp-route-id="@product.Id">Update</a>
-                                            <a class="btn btn-danger" asp-action="Delete" asp-route-id="@product.Id">Delete</a>
-                                        </td>
-                                    </tr>
+                                    if (!product.isDeleted)
+                                    {
+                                        <tr>
+                                            <td><img src="~/assets/images/shop/@product.PosterImage" /></td>
+                                            <td>@product.Title</td>
+                                            <td>
+                                                <a class="btn btn-info" asp-action="Detail" asp-route-id="@product.Id">Detail</a>
+                                                <a class="btn btn-warning" asp-action="Update" asp-route-id="@product.Id">Update</a>
+                                                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@product.Id">Delete</a>
+                                            </td>
+                                        </tr>
+                                    }
                                 }
                             </tbody>
                         </table>

@@ -985,12 +985,16 @@
       "PackagePath": "staticwebassets\\assets\\images\\brands\\3.png"
     },
     {
-      "Id": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\FinalProject\\wwwroot\\assets\\images\\brands\\36dee55b-df06-43b8-a643-fc8e7c6a8e89-richard.png",
-      "PackagePath": "staticwebassets\\assets\\images\\brands\\36dee55b-df06-43b8-a643-fc8e7c6a8e89-richard.png"
+      "Id": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\FinalProject\\wwwroot\\assets\\images\\brands\\336b9604-3ea9-4ae1-87a4-3585e895dbd2-Screenshot 2024-02-08 155203.png",
+      "PackagePath": "staticwebassets\\assets\\images\\brands\\336b9604-3ea9-4ae1-87a4-3585e895dbd2-Screenshot 2024-02-08 155203.png"
     },
     {
       "Id": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\FinalProject\\wwwroot\\assets\\images\\brands\\4.png",
       "PackagePath": "staticwebassets\\assets\\images\\brands\\4.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\FinalProject\\wwwroot\\assets\\images\\brands\\497f5c70-15b8-4b9e-946b-e6c69f6c171d-Screenshot 2023-12-18 161754.png",
+      "PackagePath": "staticwebassets\\assets\\images\\brands\\497f5c70-15b8-4b9e-946b-e6c69f6c171d-Screenshot 2023-12-18 161754.png"
     },
     {
       "Id": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\FinalProject\\wwwroot\\assets\\images\\brands\\5.png",
@@ -999,6 +1003,14 @@
     {
       "Id": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\FinalProject\\wwwroot\\assets\\images\\brands\\6.png",
       "PackagePath": "staticwebassets\\assets\\images\\brands\\6.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\FinalProject\\wwwroot\\assets\\images\\brands\\87c62bd7-0b68-4b50-bd3d-9e1f0f280b02-Screenshot 2023-11-01 165325.png",
+      "PackagePath": "staticwebassets\\assets\\images\\brands\\87c62bd7-0b68-4b50-bd3d-9e1f0f280b02-Screenshot 2023-11-01 165325.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\FinalProject\\wwwroot\\assets\\images\\brands\\e78576ef-5f5a-489f-a838-ca96b86c514f-Screenshot 2023-10-29 001450.png",
+      "PackagePath": "staticwebassets\\assets\\images\\brands\\e78576ef-5f5a-489f-a838-ca96b86c514f-Screenshot 2023-10-29 001450.png"
     },
     {
       "Id": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\FinalProject\\wwwroot\\assets\\images\\buttons\\banner.jpg",
@@ -1017,10 +1029,6 @@
       "PackagePath": "staticwebassets\\assets\\images\\categories\\0aae28cb-5dc2-46e6-a83c-89cadfe2d33b-Image 10.jpg"
     },
     {
-      "Id": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\FinalProject\\wwwroot\\assets\\images\\categories\\10ffb167-91ed-4b0b-84e6-2a69cbb200a5-richard.png",
-      "PackagePath": "staticwebassets\\assets\\images\\categories\\10ffb167-91ed-4b0b-84e6-2a69cbb200a5-richard.png"
-    },
-    {
       "Id": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\FinalProject\\wwwroot\\assets\\images\\categories\\15974542-4799-4352-b1b3-b7f702ee461b-Image 10.jpg",
       "PackagePath": "staticwebassets\\assets\\images\\categories\\15974542-4799-4352-b1b3-b7f702ee461b-Image 10.jpg"
     },
@@ -1031,6 +1039,10 @@
     {
       "Id": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\FinalProject\\wwwroot\\assets\\images\\categories\\2eadc510-2a03-45a3-a6dd-e36fce9fbc3f-richard.png",
       "PackagePath": "staticwebassets\\assets\\images\\categories\\2eadc510-2a03-45a3-a6dd-e36fce9fbc3f-richard.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\FinalProject\\wwwroot\\assets\\images\\categories\\303e20a3-c8fe-4021-805a-8bd471e251b4-Screenshot 2024-04-12 014827.png",
+      "PackagePath": "staticwebassets\\assets\\images\\categories\\303e20a3-c8fe-4021-805a-8bd471e251b4-Screenshot 2024-04-12 014827.png"
     },
     {
       "Id": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\FinalProject\\wwwroot\\assets\\images\\categories\\3799aaeb-3903-43ed-8075-94e392e600d6-richard.png",
@@ -12581,6 +12593,10 @@
       "PackagePath": "staticwebassets\\assets\\images\\shop\\19.jpg"
     },
     {
+      "Id": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\FinalProject\\wwwroot\\assets\\images\\shop\\1f1397c9-6d8b-493a-8f5f-fc124d314e4e-Screenshot 2023-10-29 001450.png",
+      "PackagePath": "staticwebassets\\assets\\images\\shop\\1f1397c9-6d8b-493a-8f5f-fc124d314e4e-Screenshot 2023-10-29 001450.png"
+    },
+    {
       "Id": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\FinalProject\\wwwroot\\assets\\images\\shop\\2.jpg",
       "PackagePath": "staticwebassets\\assets\\images\\shop\\2.jpg"
     },
@@ -12649,8 +12665,8 @@
       "PackagePath": "staticwebassets\\assets\\images\\shop\\4.jpg"
     },
     {
-      "Id": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\FinalProject\\wwwroot\\assets\\images\\shop\\41c5d0b2-2945-42d2-9dfe-c7bfebe4331d-Image 11.jpg",
-      "PackagePath": "staticwebassets\\assets\\images\\shop\\41c5d0b2-2945-42d2-9dfe-c7bfebe4331d-Image 11.jpg"
+      "Id": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\FinalProject\\wwwroot\\assets\\images\\shop\\47037d8c-c36b-4952-aea6-eafa84087178-Screenshot 2023-11-01 165325.png",
+      "PackagePath": "staticwebassets\\assets\\images\\shop\\47037d8c-c36b-4952-aea6-eafa84087178-Screenshot 2023-11-01 165325.png"
     },
     {
       "Id": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\FinalProject\\wwwroot\\assets\\images\\shop\\5.jpg",
@@ -12673,12 +12689,24 @@
       "PackagePath": "staticwebassets\\assets\\images\\shop\\9.jpg"
     },
     {
+      "Id": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\FinalProject\\wwwroot\\assets\\images\\shop\\985875ad-2948-4357-867e-e9786159c282-Screenshot 2023-11-04 164153.png",
+      "PackagePath": "staticwebassets\\assets\\images\\shop\\985875ad-2948-4357-867e-e9786159c282-Screenshot 2023-11-04 164153.png"
+    },
+    {
       "Id": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\FinalProject\\wwwroot\\assets\\images\\shop\\banner.jpg",
       "PackagePath": "staticwebassets\\assets\\images\\shop\\banner.jpg"
     },
     {
       "Id": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\FinalProject\\wwwroot\\assets\\images\\shop\\banner2.jpg",
       "PackagePath": "staticwebassets\\assets\\images\\shop\\banner2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\FinalProject\\wwwroot\\assets\\images\\shop\\d681188d-f613-486c-b5b9-accadb20896e-Screenshot 2023-10-31 154106.png",
+      "PackagePath": "staticwebassets\\assets\\images\\shop\\d681188d-f613-486c-b5b9-accadb20896e-Screenshot 2023-10-31 154106.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\FinalProject\\wwwroot\\assets\\images\\shop\\dfebae9a-0d48-4221-ad72-da727e70ae94-Image 20.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\shop\\dfebae9a-0d48-4221-ad72-da727e70ae94-Image 20.jpg"
     },
     {
       "Id": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\FinalProject\\wwwroot\\assets\\images\\shop\\page-header-back.jpg",
@@ -13643,6 +13671,10 @@
     {
       "Id": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\FinalProject\\wwwroot\\assets\\landing\\sass_optimized\\pages\\_wishlist.scss",
       "PackagePath": "staticwebassets\\assets\\landing\\sass_optimized\\pages\\_wishlist.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\FinalProject\\wwwroot\\assets\\templates\\Index.html",
+      "PackagePath": "staticwebassets\\assets\\templates\\Index.html"
     },
     {
       "Id": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\FinalProject\\wwwroot\\assets\\vendor\\animate\\animate.min.css",

@@ -1,5 +1,5 @@
 ﻿using FinalProject.Models;
-using Microsoft.Build.Framework;
+using System.ComponentModel.DataAnnotations;
 
 namespace FinalProject.ViewModel
 {
@@ -9,27 +9,29 @@ namespace FinalProject.ViewModel
         public string Title { get; set; } = null!;
         [Required]
         public double Price { get; set; }
-        public double OldPrice { get; set; } = 0;
         [Required]
+        public double OldPrice { get; set; } = 0;
+        [Range(0, 5, ErrorMessage = "Value must be between 0 and 5")]
         public double Rating { get; set; }
         [Required]
         public double SKU { get; set; }
-        public bool isStocked { get; init; } = true;
-        public bool isDeleted { get; init; } = false;
-
-        public string Description { get; set; } = "TestDescription";
-
-        public string Features { get; set; } = "TestFeatures";
-
-        public string Material { get; set; } = "TestMaterial";
-
-        public string ClaimedSize { get; set; } = "46";
-
-        public string RecommendedUse { get; set; } = "TestRecommendedUse";
-
-        public string Manufacturer { get; set; } = "TestManufacturer";
+        [Required]
+        public bool isStocked { get; set; }
+        [Required]
+        public string Description { get; set; }
+        [Required]
+        public string Features { get; set; }
+        [Required]
+        public string Material { get; set; }
+        [Required]
+        public string ClaimedSize { get; set; }
+        [Required]
+        public string RecommendedUse { get; set; }
+        [Required]
+        public string Manufacturer { get; set; }
         public int CategoryId { get; set; }
         public int BrandId { get; set; }
+        [Required]
         public IFormFile PosterImage { get; set; }
         //public List<IFormFile> Images { get; set; }
     }

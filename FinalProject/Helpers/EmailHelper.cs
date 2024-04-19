@@ -4,7 +4,7 @@ using MailKit.Security;
 using MimeKit;
 
 
-namespace ProniaP336.Helpers;
+namespace Helpers;
 
 public class EmailHelper
 {

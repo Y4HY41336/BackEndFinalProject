@@ -6,14 +6,13 @@ namespace FinalProject.Models
     public class Product
     {
         public int Id { get; set; }
-        public string Title { get; set; } = null!;
+        public string Title { get; set; }
         public double Price { get; set; }
-        public double OldPrice { get; set; }
-        [Range(0, 5, ErrorMessage = "Value must be between 0 and 5")]
+        public double OldPrice { get; set; }       
         public double Rating { get; set; }
         public double SKU { get; set; }
-        public bool isStocked { get; init; } = true;
-        public bool isDeleted { get; init; } = false;
+        public bool isStocked { get; set; }
+        public bool isDeleted { get; set; }
         public string Description { get; set; }
 		public string Features { get; set; }
 		public string Material { get; set; }
@@ -21,6 +20,8 @@ namespace FinalProject.Models
 		public string RecommendedUse { get; set; }
 		public string Manufacturer { get; set; }
         public string PosterImage { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public DateTime UpdatedDate { get; set; }
 
         public int BrandId { get; set; }
         public Brand Brand { get; set; }

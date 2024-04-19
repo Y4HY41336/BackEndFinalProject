@@ -1,10 +1,11 @@
-﻿@using FinalProject.Models;
+﻿@using FinalProject.Areas.Admin.ViewModel;
+@using FinalProject.Models;
 
 @{
     ViewData["Title"] = "Update";
 }
 
-@model Category
+@model CategoryUpdateViewModel
 
 
 <div class="content-wrapper">
@@ -12,12 +13,17 @@
         <div class="col-md-6 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Update product</h4>
+                    <h4 class="card-title">Update category</h4>
                     <form class="forms-sample" method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="exampleInputUsername1">Category Name</label>
                             <input class="form-control" asp-for="CategoryName" placeholder="Title">
                             <span asp-validation-for="CategoryName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Image</label>
+                            <input type="file" class="form-control" asp-for="Image" placeholder="Image">
+                            <span asp-validation-for="Image" class="text-danger"></span>
                         </div>
                         <button type="submit" class="btn btn-primary mr-2">Submit</button>
                         <button asp-action="Index" class="btn btn-light">Cancel</button>
