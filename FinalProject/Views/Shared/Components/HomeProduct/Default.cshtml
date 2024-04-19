@@ -1,0 +1,53 @@
+﻿
+@{
+    Layout = null;
+}
+
+@foreach (var product in Model)
+{
+    <div class="product text-center">
+        <figure class="product-media">
+            <a href="product.html">
+                <img src="~/assets/images/shop/@product.PosterImage" alt="Blue Pinafore Denim Dress"
+                 width="280" height="315" style="background-color: #f2f3f5;" />
+            </a>
+            <div class="product-label-group">
+                <label class="product-label label-new">new</label>
+            </div>
+            <div class="product-action-vertical">
+                <a href="#" class="btn-product-icon btn-cart" data-toggle="modal"
+               data-target="#addCartModal" title="Add to cart"><i class="d-icon-bag"></i></a>
+                <a href="#" class="btn-product-icon btn-wishlist" title="Add to wishlist">
+                    <i class="d-icon-heart"></i>
+                </a>
+            </div>
+            <div class="product-action">
+                <a asp-controller="Product" asp-action="ProductDetail" asp-route-id="@product.Id" class="btn-product" title="Quick View">Quick View</a>
+            </div>
+        </figure>
+        <div class="product-details">
+            <div class="product-cat">
+                <a href="shop-grid-3cols.html">@product.Category.CategoryName</a>
+            </div>
+            <h3 class="product-name">
+                <a href="product.html">@product.Title</a>
+            </h3>
+            <div class="product-price">
+                <ins class="new-price">$@product.Price</ins>
+                @if (product.OldPrice > product.Price)
+                {
+                    <del class="old-price">$@product.OldPrice</del>
+                }
+            </div>
+            <div class="ratings-container">
+                <div class="ratings-full">
+                    <span class="ratings" style="width:@(product.Rating * 20)%"></span>
+                    <span class="tooltiptext tooltip-top"></span>
+                </div>
+                <a href="product.html" class="rating-reviews">( 16 reviews @* Comments *@)</a>
+            </div>
+        </div>
+    </div>
+
+}
+

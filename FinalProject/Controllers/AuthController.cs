@@ -163,5 +163,19 @@ public class AuthController : Controller
 
         return BadRequest();
     }
+    //public async Task<IActionResult> CreateRole()
+    //{
+    //    foreach (var roleName in Enum.GetNames(typeof(Roles)))
+    //    {
+    //        await _roleManager.CreateAsync(new IdentityRole { Name = roleName });
+    //    }
+
+    //    await _roleManager.CreateAsync(new IdentityRole { Name = "Admin" });
+    //    await _roleManager.CreateAsync(new IdentityRole { Name = "User" });
+    //    await _roleManager.CreateAsync(new IdentityRole { Name = "Moderator" });
+
+    //    return Content("Butun rollar yarandi");
+    //}
+
 
 }

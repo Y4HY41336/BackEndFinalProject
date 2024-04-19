@@ -2,18 +2,17 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace FinalProject.Controllers
+namespace FinalProject.ViewComponents
 {
-    public class HomeController : Controller
+    public class ProductViewComponent : ViewComponent
     {
         private readonly AppDbContext _context;
 
-        public HomeController(AppDbContext context)
+        public ProductViewComponent(AppDbContext context)
         {
             _context = context;
         }
-
-        public async Task<IActionResult> Index()
+        public async Task<IViewComponentResult> InvokeAsync()
         {
             var products = await _context.Products.Where(p => p.isStocked).Where(p => !p.isDeleted).Include(p => p.Category).ToListAsync();
             return View(products);

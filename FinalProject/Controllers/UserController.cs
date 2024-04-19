@@ -61,7 +61,7 @@ public class UserController : Controller
         //await _userManager.AddToRoleAsync(appUser, Roles.User.ToString());
         await _userManager.AddToRoleAsync(appUser, Roles.Moderator.ToString());
         //await _userManager.AddToRoleAsync(appUser, Roles.Admin.ToString());
-        
+
         return RedirectToAction("Login", "Auth");
     }
 
