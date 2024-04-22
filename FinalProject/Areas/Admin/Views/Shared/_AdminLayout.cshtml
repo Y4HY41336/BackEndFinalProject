@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="~/adminAssets/css/style.css">
     <!-- endinject -->
     <link rel="shortcut icon" href="~/adminAssets/images/favicon.png" />
-    
+
 </head>
 
 <body>
@@ -175,6 +175,20 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                            <i class="mdi mdi-circle-outline menu-icon"></i>
+                            <span class="menu-title">Home Page</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-basic">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/buttons.html">Slider</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/typography.html">Shipping</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/typography.html">Extra</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" asp-controller="Product" asp-action="Index">
                             <i class="mdi mdi-view-headline menu-icon"></i>
                             <span class="menu-title">Product</span>
@@ -225,7 +239,6 @@
         <!-- page-body-wrapper ends -->
     </div>
     <!-- container-scroller -->
-
     <!-- plugins:js -->
     <script src="~/adminAssets/vendors/base/vendor.bundle.base.js"></script>
     <!-- endinject -->

@@ -1,4 +1,5 @@
 ﻿using FinalProject.Context;
+using FinalProject.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,7 +17,14 @@ namespace FinalProject.Controllers
         public async Task<IActionResult> Index()
         {
             var products = await _context.Products.Where(p => p.isStocked).Where(p => !p.isDeleted).Include(p => p.Category).ToListAsync();
-            return View(products);
+            var categories = await _context.Categories.Where(p => !p.isDeleted).ToListAsync();
+            HomePageViewModel model = new()
+            {
+                Products = products,
+                Categories = categories
+
+            };
+            return View(model);
         }
     }
 }
