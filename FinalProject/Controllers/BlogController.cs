@@ -19,5 +19,10 @@ namespace FinalProject.Controllers
             var blog = await _context.Blogs.ToListAsync();
             return View(blog);
         }
+        public async Task<IActionResult> BlogDetail(int id)
+        {
+            var blog = await _context.Blogs.FirstOrDefaultAsync(b => b.Id == id);
+            return View(blog);
+        }
     }
 }

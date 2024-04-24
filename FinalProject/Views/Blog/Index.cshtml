@@ -25,14 +25,14 @@
                         {
                             <article class="post post-classic mb-7">
                                 <figure class="post-media overlay-zoom">
-                                    <a asp-action="BlogDetail" asp-controller="Blog">
+                                    <a asp-action="BlogDetail" asp-controller="Blog" asp-route-id="@blog.Id">
                                         <img src="assets/images/blog/1_lg.jpg" @* PosterImage *@ width="870" height="420" alt="post" />
                                     </a>
                                 </figure>
                                 <div class="post-details">
                                     <div class="post-meta">
                                         by <a href="#" class="post-author">@blog.Author</a>
-                                        on <a href="#" class="post-date">@blog.CreatedDate</a>
+                                        on <a href="#" class="post-date">@blog.CreatedDate.ToString("dd/MM/yyyy")</a>
                                         | <a href="#" class="post-comment"><span>3</span> Comments</a>
                                     </div>
                                     <h4 class="post-title">
