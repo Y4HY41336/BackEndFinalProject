@@ -1,7 +1,10 @@
-﻿
+﻿@using FinalProject.Models;
+
 @{
     ViewData["Title"] = "Index";
 }
+
+@model List<Blog>
 
 <main class="main">
     <nav class="breadcrumb-nav">
@@ -18,132 +21,36 @@
             <div class="row gutter-lg">
                 <div class="col-lg-9">
                     <div class="posts">
-                        <article class="post post-classic mb-7">
-                            <figure class="post-media overlay-zoom">
-                                <a href="post-single.html">
-                                    <img src="assets/images/blog/1_lg.jpg" width="870" height="420" alt="post" />
-                                </a>
-                            </figure>
-                            <div class="post-details">
-                                <div class="post-meta">
-                                    by <a href="#" class="post-author">John Doe</a>
-                                    on <a href="#" class="post-date">Sep 6,2020</a>
-                                    | <a href="#" class="post-comment"><span>3</span> Comments</a>
-                                </div>
-                                <h4 class="post-title">
-                                    <a href="post-single.html">
-                                        Explore Fashion Trending For
-                                        Women In Autumn 2021
+                        @foreach (var blog in Model)
+                        {
+                            <article class="post post-classic mb-7">
+                                <figure class="post-media overlay-zoom">
+                                    <a asp-action="BlogDetail" asp-controller="Blog">
+                                        <img src="assets/images/blog/1_lg.jpg" @* PosterImage *@ width="870" height="420" alt="post" />
                                     </a>
-                                </h4>
-                                <p class="post-content">
-                                    Sed pretium, ligula sollicitudin laoreet viverra,
-                                    tortor libero sodales leo, eget blandit nunc tortor eu nibh. Suspendisse
-                                    potenti.
-                                    Sed egestas, ante et vulputate volutpat, uctus metus libero eu augue.
-                                </p>
-                                <a href="post-single.html" class="btn btn-link btn-underline btn-primary">
-                                    Read
-                                    more<i class="d-icon-arrow-right"></i>
-                                </a>
-                            </div>
-                        </article>
-                        <article class="post post-classic post-video mb-7">
-                            <figure class="post-media">
-                                <a href="post-single.html">
-                                    <img src="assets/images/blog/2_lg.jpg" width="870" height="420" alt="post" />
-                                </a>
-                                <span class="video-play"></span>
-                                <video width="380">
-                                    <source src="video/memory-of-a-woman.mp4" type="video/mp4">
-                                </video>
-                            </figure>
-                            <div class="post-details">
-                                <div class="post-meta">
-                                    by <a href="#" class="post-author">John Doe</a>
-                                    on <a href="#" class="post-date">Nov 6,2019</a>
-                                    | <a href="#" class="post-comment"><span>7</span> Comments</a>
-                                </div>
-                                <h4 class="post-title">
-                                    <a href="post-single.html">Complete Set Of Ski Tools</a>
-                                </h4>
-                                <p class="post-content">
-                                    Sed pretium, ligula sollicitudin laoreet viverra,
-                                    tortor libero sodales leo, eget blandit nunc tortor eu nibh. Suspendisse
-                                    potenti.
-                                    Sed egestas, ante et vulputate volutpat, uctus metus libero eu augue.
-                                </p>
-                                <a href="post-single.html" class="btn btn-link btn-underline btn-primary">
-                                    Read
-                                    more<i class="d-icon-arrow-right"></i>
-                                </a>
-                            </div>
-                        </article>
-                        <article class="post post-classic mb-7">
-                            <figure class="post-media">
-                                <div class="owl-carousel owl-theme owl-dot-inner owl-dot-white row cols-1 gutter-no"
-                                     data-owl-options="{
-                                            'items': 1
-                                        }">
-                                    <img src="assets/images/blog/3_lg.jpg" width="870" height="420" alt="post" />
-                                    <img src="assets/images/blog/2_lg.jpg" width="870" height="420" alt="post" />
-                                    <img src="assets/images/blog/1_lg.jpg" width="870" height="420" alt="post" />
-                                </div>
-                            </figure>
-                            <div class="post-details">
-                                <div class="post-meta">
-                                    by <a href="#" class="post-author">John Doe</a>
-                                    on <a href="#" class="post-date">May 17, 2018</a>
-                                    | <a href="#" class="post-comment"><span>4</span> Comments</a>
-                                </div>
-                                <h4 class="post-title">
-                                    <a href="post-single.html">
-                                        Explore Fashion Ipad And
-                                        Accessories
+                                </figure>
+                                <div class="post-details">
+                                    <div class="post-meta">
+                                        by <a href="#" class="post-author">@blog.Author</a>
+                                        on <a href="#" class="post-date">@blog.CreatedDate</a>
+                                        | <a href="#" class="post-comment"><span>3</span> Comments</a>
+                                    </div>
+                                    <h4 class="post-title">
+                                        <a asp-action="BlogDetail" asp-controller="Blog">
+                                            @blog.Title
+                                        </a>
+                                    </h4>
+                                    <p class="post-content">
+                                        @blog.Description
+                                    </p>
+                                    <a asp-action="BlogDetail" asp-controller="Blog" class="btn btn-link btn-underline btn-primary">
+                                        Read
+                                        more<i class="d-icon-arrow-right"></i>
                                     </a>
-                                </h4>
-                                <p class="post-content">
-                                    Sed pretium, ligula sollicitudin laoreet viverra,
-                                    tortor libero sodales leo, eget blandit nunc tortor eu nibh. Suspendisse
-                                    potenti.
-                                    Sed egestas, ante et vulputate volutpat, uctus metus libero eu augue.
-                                </p>
-                                <a href="post-single.html" class="btn btn-link btn-underline btn-primary">
-                                    Read
-                                    more<i class="d-icon-arrow-right"></i>
-                                </a>
-                            </div>
-                        </article>
-                        <article class="post post-classic mb-5">
-                            <figure class="post-media overlay-zoom">
-                                <a href="post-single.html">
-                                    <img src="assets/images/blog/4_lg.jpg" width="870" height="420" alt="post" />
-                                </a>
-                            </figure>
-                            <div class="post-details">
-                                <div class="post-meta">
-                                    by <a href="#" class="post-author">John Doe</a>
-                                    on <a href="#" class="post-date">Nov 18, 2019</a>
-                                    | <a href="#" class="post-comment"><span>9</span> Comments</a>
                                 </div>
-                                <h4 class="post-title">
-                                    <a href="post-single.html">
-                                        Women's Trending Sunglasses
-                                        And Clothing
-                                    </a>
-                                </h4>
-                                <p class="post-content">
-                                    Sed pretium, ligula sollicitudin laoreet viverra,
-                                    tortor libero sodales leo, eget blandit nunc tortor eu nibh. Suspendisse
-                                    potenti.
-                                    Sed egestas, ante et vulputate volutpat, uctus metus libero eu augue.
-                                </p>
-                                <a href="post-single.html" class="btn btn-link btn-underline btn-primary">
-                                    Read
-                                    more<i class="d-icon-arrow-right"></i>
-                                </a>
-                            </div>
-                        </article>
+                            </article>
+
+                        }                        
                     </div>
                     <ul class="pagination">
                         <li class="page-item disabled">
