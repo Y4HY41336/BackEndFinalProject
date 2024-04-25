@@ -33,11 +33,19 @@
                 <a href="product.html">@product.Title</a>
             </h3>
             <div class="product-price">
-                <ins class="new-price">$@product.Price</ins>
-                @if (product.OldPrice > product.Price)
+                @if (product.isStocked)
                 {
-                    <del class="old-price">$@product.OldPrice</del>
+                    <ins class="new-price">$@product.Price</ins>
+                    @if (product.OldPrice > product.Price)
+                    {
+                        <del class="old-price">$@product.OldPrice</del>
+                    }
                 }
+                else
+                {
+                    <ins class="new-price">Out of Stock</ins>
+                }
+                
             </div>
             <div class="ratings-container">
                 <div class="ratings-full">

@@ -18,7 +18,7 @@ namespace FinalProject.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var products = await _context.Products.Where(p => p.isStocked).Where(p => !p.isDeleted).Include(p => p.Category).ToListAsync();          
+            var products = await _context.Products/*.Where(p => p.isStocked)*/.Where(p => !p.isDeleted).Include(p => p.Category).ToListAsync();          
             return View(products);
         }
 

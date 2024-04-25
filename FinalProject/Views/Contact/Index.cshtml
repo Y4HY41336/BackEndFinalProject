@@ -2,6 +2,8 @@
     ViewData["Title"] = "Index";
 }
 
+@model Comment
+
 <main class="main">
     <nav class="breadcrumb-nav">
         <div class="container">
@@ -41,22 +43,35 @@
                     </div>
                     <div class="col-lg-9 col-md-8 col-sm-6 d-flex align-items-center mb-4">
                         <div class="w-100">
-                            <form class="pl-lg-2" action="#">
+                            <form class="pl-lg-2" method="post">
                                 <h4 class="ls-m font-weight-bold">Let’s Connect</h4>
-                                <p>
-                                    Your email address will not be published. Required fields are
-                                    marked *
-                                </p>
+                                <div>
+                                    @if (TempData["Success"] != null)
+                                    {
+                                        <div class="text-success mb-3">
+                                            @TempData["Success"].ToString()
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <p>Leave a comment</p>
+
+                                    }
+                                </div>
                                 <div class="row mb-2">
                                     <div class="col-12 mb-4">
-                                        <textarea class="form-control" required
-                                                  placeholder="Comment*"></textarea>
+                                        <textarea class="form-control" asp-for="Comments" placeholder="Comment"></textarea>
+                                        <span asp-validation-for="Comments" class="text-danger"></span>
                                     </div>
                                     <div class="col-md-6 mb-4">
-                                        <input class="form-control" type="text" placeholder="Name *" required>
+                                        <input class="form-control" asp-for="Name" placeholder="Name">
+                                        <span asp-validation-for="Name" class="text-danger"></span>
+
                                     </div>
                                     <div class="col-md-6 mb-4">
-                                        <input class="form-control" type="email" placeholder="Email *" required>
+                                        <input class="form-control" asp-for="Email" placeholder="Email">
+                                        <span asp-validation-for="Email" class="text-danger"></span>
+
                                     </div>
                                 </div>
                                 <button class="btn btn-dark btn-rounded">
@@ -140,8 +155,8 @@
         <!-- End Store Section -->
         <!-- Google Maps - Go to the bottom of the page to change settings and map location. -->
         <div class="google-map" id="googlemaps" style="height: 386px">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d759.8570416707071!2d49.85329774634177!3d40.37720213633948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d079efb5163%3A0xc20aa51a5f0b5e01!2sCode%20Academy!5e0!3m2!1sen!2saz!4v1707053160781!5m2!1sen!2saz" 
-            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d759.8570416707071!2d49.85329774634177!3d40.37720213633948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d079efb5163%3A0xc20aa51a5f0b5e01!2sCode%20Academy!5e0!3m2!1sen!2saz!4v1707053160781!5m2!1sen!2saz"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <!-- End Map Section -->
     </div>

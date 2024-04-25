@@ -80,7 +80,14 @@
 							SKU: <span class="product-sku">@Model.SKU</span>
 							BRAND: <span class="product-brand">@Model.BrandName</span>
 						</div>
-						<div class="product-price">$@Model.Price</div>
+						@if (Model.isStocked)
+						{
+							<ins class="new-price">$@Model.Price</ins>
+						}
+						else
+						{
+							<ins class="new-price text-danger" style="text-decoration:none;">Out of Stock</ins>
+						}
 						<div class="ratings-container">
 							<div class="ratings-full">
 								<span class="ratings" style="width:@(Model.Rating * 20)%"></span>

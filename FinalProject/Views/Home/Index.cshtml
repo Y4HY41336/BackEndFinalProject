@@ -241,7 +241,7 @@
                 {
                     <div class="product text-center">
                         <figure class="product-media">
-                            <a href="product.html">
+                            <a asp-controller="Product" asp-action="ProductDetail" asp-route-id="@product.Id">
                                 <img src="~/assets/images/shop/@product.PosterImage" alt="Blue Pinafore Denim Dress"
                                  width="280" height="315" style="background-color: #f2f3f5;" />
                             </a>
@@ -321,7 +321,7 @@
                 {
                     <div class="product text-center">
                         <figure class="product-media">
-                            <a href="product.html">
+                            <a asp-controller="Product" asp-action="ProductDetail" asp-route-id="@product.Id">
                                 <img src="~/assets/images/shop/@product.PosterImage" alt="Blue Pinafore Denim Dress"
                                  width="280" height="315" style="background-color: #f2f3f5;" />
                             </a>

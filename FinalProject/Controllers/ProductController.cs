@@ -17,7 +17,7 @@ public class ProductController : Controller
     }
     public async Task<IActionResult> ProductDetail(int id)
     {
-        var products = await _context.Products.Where(p => p.isStocked).Include(p => p.Category).Include(p => p.Brand).FirstOrDefaultAsync(p => p.Id == id);
+        var products = await _context.Products/*.Where(p => p.isStocked)*/.Include(p => p.Category).Include(p => p.Brand).FirstOrDefaultAsync(p => p.Id == id);
 		if (products == null)
         {
             return NotFound();
@@ -37,7 +37,7 @@ public class ProductController : Controller
             ClaimedSize = products.ClaimedSize,
             RecommendedUse = products.RecommendedUse,
             Manufacturer = products.Manufacturer,
-            
+            isStocked = products.isStocked,
         };
         return View(model);
     }
