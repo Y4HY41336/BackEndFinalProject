@@ -9,145 +9,145 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = FinalProject
 build_property.RootNamespace = FinalProject
-build_property.ProjectDir = C:\Users\aliyahyahs\Desktop\Codes\BackEnd\FinalProject\BackEndFinalProject\FinalProject\
+build_property.ProjectDir = C:\Users\user\Desktop\Code\FinalProject\BackEndFinalProject\FinalProject\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\aliyahyahs\Desktop\Codes\BackEnd\FinalProject\BackEndFinalProject\FinalProject
+build_property.MSBuildProjectDirectory = C:\Users\user\Desktop\Code\FinalProject\BackEndFinalProject\FinalProject
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/aliyahyahs/Desktop/Codes/BackEnd/FinalProject/BackEndFinalProject/FinalProject/Areas/Admin/Views/Brand/Create.cshtml]
+[C:/Users/user/Desktop/Code/FinalProject/BackEndFinalProject/FinalProject/Areas/Admin/Views/Brand/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQnJhbmRcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aliyahyahs/Desktop/Codes/BackEnd/FinalProject/BackEndFinalProject/FinalProject/Areas/Admin/Views/Brand/Delete.cshtml]
+[C:/Users/user/Desktop/Code/FinalProject/BackEndFinalProject/FinalProject/Areas/Admin/Views/Brand/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQnJhbmRcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aliyahyahs/Desktop/Codes/BackEnd/FinalProject/BackEndFinalProject/FinalProject/Areas/Admin/Views/Brand/Detail.cshtml]
+[C:/Users/user/Desktop/Code/FinalProject/BackEndFinalProject/FinalProject/Areas/Admin/Views/Brand/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQnJhbmRcRGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aliyahyahs/Desktop/Codes/BackEnd/FinalProject/BackEndFinalProject/FinalProject/Areas/Admin/Views/Brand/Index.cshtml]
+[C:/Users/user/Desktop/Code/FinalProject/BackEndFinalProject/FinalProject/Areas/Admin/Views/Brand/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQnJhbmRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aliyahyahs/Desktop/Codes/BackEnd/FinalProject/BackEndFinalProject/FinalProject/Areas/Admin/Views/Brand/Update.cshtml]
+[C:/Users/user/Desktop/Code/FinalProject/BackEndFinalProject/FinalProject/Areas/Admin/Views/Brand/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQnJhbmRcVXBkYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aliyahyahs/Desktop/Codes/BackEnd/FinalProject/BackEndFinalProject/FinalProject/Areas/Admin/Views/Category/Create.cshtml]
+[C:/Users/user/Desktop/Code/FinalProject/BackEndFinalProject/FinalProject/Areas/Admin/Views/Category/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcnlcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aliyahyahs/Desktop/Codes/BackEnd/FinalProject/BackEndFinalProject/FinalProject/Areas/Admin/Views/Category/Delete.cshtml]
+[C:/Users/user/Desktop/Code/FinalProject/BackEndFinalProject/FinalProject/Areas/Admin/Views/Category/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcnlcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aliyahyahs/Desktop/Codes/BackEnd/FinalProject/BackEndFinalProject/FinalProject/Areas/Admin/Views/Category/Detail.cshtml]
+[C:/Users/user/Desktop/Code/FinalProject/BackEndFinalProject/FinalProject/Areas/Admin/Views/Category/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcnlcRGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aliyahyahs/Desktop/Codes/BackEnd/FinalProject/BackEndFinalProject/FinalProject/Areas/Admin/Views/Category/Index.cshtml]
+[C:/Users/user/Desktop/Code/FinalProject/BackEndFinalProject/FinalProject/Areas/Admin/Views/Category/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aliyahyahs/Desktop/Codes/BackEnd/FinalProject/BackEndFinalProject/FinalProject/Areas/Admin/Views/Category/Update.cshtml]
+[C:/Users/user/Desktop/Code/FinalProject/BackEndFinalProject/FinalProject/Areas/Admin/Views/Category/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcnlcVXBkYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aliyahyahs/Desktop/Codes/BackEnd/FinalProject/BackEndFinalProject/FinalProject/Areas/Admin/Views/Dashboard/Index.cshtml]
+[C:/Users/user/Desktop/Code/FinalProject/BackEndFinalProject/FinalProject/Areas/Admin/Views/Dashboard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aliyahyahs/Desktop/Codes/BackEnd/FinalProject/BackEndFinalProject/FinalProject/Areas/Admin/Views/Product/Create.cshtml]
+[C:/Users/user/Desktop/Code/FinalProject/BackEndFinalProject/FinalProject/Areas/Admin/Views/Product/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aliyahyahs/Desktop/Codes/BackEnd/FinalProject/BackEndFinalProject/FinalProject/Areas/Admin/Views/Product/Delete.cshtml]
+[C:/Users/user/Desktop/Code/FinalProject/BackEndFinalProject/FinalProject/Areas/Admin/Views/Product/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdFxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aliyahyahs/Desktop/Codes/BackEnd/FinalProject/BackEndFinalProject/FinalProject/Areas/Admin/Views/Product/Detail.cshtml]
+[C:/Users/user/Desktop/Code/FinalProject/BackEndFinalProject/FinalProject/Areas/Admin/Views/Product/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdFxEZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aliyahyahs/Desktop/Codes/BackEnd/FinalProject/BackEndFinalProject/FinalProject/Areas/Admin/Views/Product/Index.cshtml]
+[C:/Users/user/Desktop/Code/FinalProject/BackEndFinalProject/FinalProject/Areas/Admin/Views/Product/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aliyahyahs/Desktop/Codes/BackEnd/FinalProject/BackEndFinalProject/FinalProject/Areas/Admin/Views/Product/Update.cshtml]
+[C:/Users/user/Desktop/Code/FinalProject/BackEndFinalProject/FinalProject/Areas/Admin/Views/Product/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdFxVcGRhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aliyahyahs/Desktop/Codes/BackEnd/FinalProject/BackEndFinalProject/FinalProject/Areas/Admin/Views/Shared/_AdminLayout.cshtml]
+[C:/Users/user/Desktop/Code/FinalProject/BackEndFinalProject/FinalProject/Areas/Admin/Views/Shared/_AdminLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aliyahyahs/Desktop/Codes/BackEnd/FinalProject/BackEndFinalProject/FinalProject/Areas/Admin/Views/_ViewImports.cshtml]
+[C:/Users/user/Desktop/Code/FinalProject/BackEndFinalProject/FinalProject/Areas/Admin/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aliyahyahs/Desktop/Codes/BackEnd/FinalProject/BackEndFinalProject/FinalProject/Areas/Admin/Views/_ViewStart.cshtml]
+[C:/Users/user/Desktop/Code/FinalProject/BackEndFinalProject/FinalProject/Areas/Admin/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aliyahyahs/Desktop/Codes/BackEnd/FinalProject/BackEndFinalProject/FinalProject/Views/Auth/ForgotPassword.cshtml]
+[C:/Users/user/Desktop/Code/FinalProject/BackEndFinalProject/FinalProject/Views/Auth/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aliyahyahs/Desktop/Codes/BackEnd/FinalProject/BackEndFinalProject/FinalProject/Views/Auth/Login.cshtml]
+[C:/Users/user/Desktop/Code/FinalProject/BackEndFinalProject/FinalProject/Views/Auth/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aliyahyahs/Desktop/Codes/BackEnd/FinalProject/BackEndFinalProject/FinalProject/Views/Auth/ResetPassword.cshtml]
+[C:/Users/user/Desktop/Code/FinalProject/BackEndFinalProject/FinalProject/Views/Auth/ResetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aliyahyahs/Desktop/Codes/BackEnd/FinalProject/BackEndFinalProject/FinalProject/Views/Blog/BlogDetail.cshtml]
+[C:/Users/user/Desktop/Code/FinalProject/BackEndFinalProject/FinalProject/Views/Blog/BlogDetail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xCbG9nRGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aliyahyahs/Desktop/Codes/BackEnd/FinalProject/BackEndFinalProject/FinalProject/Views/Blog/Index.cshtml]
+[C:/Users/user/Desktop/Code/FinalProject/BackEndFinalProject/FinalProject/Views/Blog/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aliyahyahs/Desktop/Codes/BackEnd/FinalProject/BackEndFinalProject/FinalProject/Views/Contact/Index.cshtml]
+[C:/Users/user/Desktop/Code/FinalProject/BackEndFinalProject/FinalProject/Views/Contact/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aliyahyahs/Desktop/Codes/BackEnd/FinalProject/BackEndFinalProject/FinalProject/Views/Home/Index.cshtml]
+[C:/Users/user/Desktop/Code/FinalProject/BackEndFinalProject/FinalProject/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aliyahyahs/Desktop/Codes/BackEnd/FinalProject/BackEndFinalProject/FinalProject/Views/Product/ProductDetail.cshtml]
+[C:/Users/user/Desktop/Code/FinalProject/BackEndFinalProject/FinalProject/Views/Product/ProductDetail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxQcm9kdWN0RGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aliyahyahs/Desktop/Codes/BackEnd/FinalProject/BackEndFinalProject/FinalProject/Views/Shared/Components/HomeProduct/Default.cshtml]
+[C:/Users/user/Desktop/Code/FinalProject/BackEndFinalProject/FinalProject/Views/Shared/Components/HomeProduct/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcSG9tZVByb2R1Y3RcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aliyahyahs/Desktop/Codes/BackEnd/FinalProject/BackEndFinalProject/FinalProject/Views/Shared/Components/Product/Default.cshtml]
+[C:/Users/user/Desktop/Code/FinalProject/BackEndFinalProject/FinalProject/Views/Shared/Components/Product/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcUHJvZHVjdFxEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aliyahyahs/Desktop/Codes/BackEnd/FinalProject/BackEndFinalProject/FinalProject/Views/Shared/_Layout.cshtml]
+[C:/Users/user/Desktop/Code/FinalProject/BackEndFinalProject/FinalProject/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aliyahyahs/Desktop/Codes/BackEnd/FinalProject/BackEndFinalProject/FinalProject/Views/Shop/Index.cshtml]
+[C:/Users/user/Desktop/Code/FinalProject/BackEndFinalProject/FinalProject/Views/Shop/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aliyahyahs/Desktop/Codes/BackEnd/FinalProject/BackEndFinalProject/FinalProject/Views/User/Register.cshtml]
+[C:/Users/user/Desktop/Code/FinalProject/BackEndFinalProject/FinalProject/Views/User/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aliyahyahs/Desktop/Codes/BackEnd/FinalProject/BackEndFinalProject/FinalProject/Views/_ViewImports.cshtml]
+[C:/Users/user/Desktop/Code/FinalProject/BackEndFinalProject/FinalProject/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aliyahyahs/Desktop/Codes/BackEnd/FinalProject/BackEndFinalProject/FinalProject/Views/_ViewStart.cshtml]
+[C:/Users/user/Desktop/Code/FinalProject/BackEndFinalProject/FinalProject/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

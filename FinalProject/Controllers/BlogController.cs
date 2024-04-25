@@ -21,8 +21,22 @@ namespace FinalProject.Controllers
         }
         public async Task<IActionResult> BlogDetail(int id)
         {
+            var blogList = await _context.Blogs.ToListAsync();
             var blog = await _context.Blogs.FirstOrDefaultAsync(b => b.Id == id);
-            return View(blog);
+            BlogPageViewModel model = new()
+            {
+                Title = blog.Title,
+                Description = blog.Description,
+                Author = blog.Author,
+                FamousWord = blog.FamousWord,
+                Content = blog.Content,
+                AuthorComment = blog.AuthorComment,
+
+                
+                Blogs = blogList,
+
+            };
+            return View(model);
         }
     }
 }

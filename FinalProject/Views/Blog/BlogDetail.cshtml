@@ -2,7 +2,7 @@
     ViewData["Title"] = "BlogDetail";
 }
 
-@model Blog
+@model BlogPageViewModel
 
 <main class="main">
     <nav class="breadcrumb-nav mt-0 mt-lg-3">
@@ -129,7 +129,7 @@
                                 }">
 
 
-                        @*@foreach (var blog in Model)
+                        @foreach (var blog in Model.Blogs)
                         {
                             <div class="post">
                                 <figure class="post-media">
@@ -160,7 +160,7 @@
                                 </div>
                             </div>
 
-                        }*@
+                        }
 
                     </div>
                 </div>
