@@ -617,6 +617,10 @@
       "PackagePath": "staticwebassets\\assets\\images\\blog\\1_xs.jpg"
     },
     {
+      "Id": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\BackEndFinalProject\\FinalProject\\wwwroot\\assets\\images\\blog\\1b7696b6-1fca-4219-9999-b6affcc2a8d8-Image 20.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\1b7696b6-1fca-4219-9999-b6affcc2a8d8-Image 20.jpg"
+    },
+    {
       "Id": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\BackEndFinalProject\\FinalProject\\wwwroot\\assets\\images\\blog\\2991cd9e-fee7-49be-933b-5698d994b912-Screenshot 2023-10-29 001450.png",
       "PackagePath": "staticwebassets\\assets\\images\\blog\\2991cd9e-fee7-49be-933b-5698d994b912-Screenshot 2023-10-29 001450.png"
     },
@@ -627,10 +631,6 @@
     {
       "Id": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\BackEndFinalProject\\FinalProject\\wwwroot\\assets\\images\\blog\\2_xs.jpg",
       "PackagePath": "staticwebassets\\assets\\images\\blog\\2_xs.jpg"
-    },
-    {
-      "Id": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\BackEndFinalProject\\FinalProject\\wwwroot\\assets\\images\\blog\\2b0d0f7d-6ea0-480c-92ce-64d5985e23ab-Screenshot 2023-10-29 121511.png",
-      "PackagePath": "staticwebassets\\assets\\images\\blog\\2b0d0f7d-6ea0-480c-92ce-64d5985e23ab-Screenshot 2023-10-29 121511.png"
     },
     {
       "Id": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\BackEndFinalProject\\FinalProject\\wwwroot\\assets\\images\\blog\\2b2c6337-e92d-4b71-b8f3-adf6854f0ec3-Screenshot 2023-10-29 001450.png",
@@ -701,12 +701,24 @@
       "PackagePath": "staticwebassets\\assets\\images\\blog\\5_lg.jpg"
     },
     {
-      "Id": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\BackEndFinalProject\\FinalProject\\wwwroot\\assets\\images\\blog\\659c0d54-4bca-4725-9b39-fadfb7b97f0b-Screenshot 2023-10-29 001450.png",
-      "PackagePath": "staticwebassets\\assets\\images\\blog\\659c0d54-4bca-4725-9b39-fadfb7b97f0b-Screenshot 2023-10-29 001450.png"
-    },
-    {
       "Id": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\BackEndFinalProject\\FinalProject\\wwwroot\\assets\\images\\blog\\810551f7-d7b6-4cf7-8748-0b450d144f73-Screenshot 2023-10-29 001450.png",
       "PackagePath": "staticwebassets\\assets\\images\\blog\\810551f7-d7b6-4cf7-8748-0b450d144f73-Screenshot 2023-10-29 001450.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\BackEndFinalProject\\FinalProject\\wwwroot\\assets\\images\\blog\\9ce0651a-fa72-48b2-a35f-678aa12f6fd6-img.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\9ce0651a-fa72-48b2-a35f-678aa12f6fd6-img.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\BackEndFinalProject\\FinalProject\\wwwroot\\assets\\images\\blog\\9dd14083-3381-4902-a924-f380418d16f1-img.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\9dd14083-3381-4902-a924-f380418d16f1-img.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\BackEndFinalProject\\FinalProject\\wwwroot\\assets\\images\\blog\\b5290b98-6724-41bf-b342-be984295cfeb-Screenshot 2023-10-29 001450.png",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\b5290b98-6724-41bf-b342-be984295cfeb-Screenshot 2023-10-29 001450.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\BackEndFinalProject\\FinalProject\\wwwroot\\assets\\images\\blog\\cafd7277-80e7-4915-9fff-cb050f1458b0-Image 11.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\cafd7277-80e7-4915-9fff-cb050f1458b0-Image 11.jpg"
     },
     {
       "Id": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\BackEndFinalProject\\FinalProject\\wwwroot\\assets\\images\\blog\\comments\\1.jpg",
@@ -767,6 +779,10 @@
     {
       "Id": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\BackEndFinalProject\\FinalProject\\wwwroot\\assets\\images\\blog\\element\\9.jpg",
       "PackagePath": "staticwebassets\\assets\\images\\blog\\element\\9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\BackEndFinalProject\\FinalProject\\wwwroot\\assets\\images\\blog\\f22afe43-2c3f-43c1-8b11-10272847e63c-Image 24.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\f22afe43-2c3f-43c1-8b11-10272847e63c-Image 24.jpg"
     },
     {
       "Id": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\BackEndFinalProject\\FinalProject\\wwwroot\\assets\\images\\blog\\frame\\1.jpg",

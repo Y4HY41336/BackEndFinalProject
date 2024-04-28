@@ -20,29 +20,29 @@
                 <div class="col-lg-9 ">
                     <article class="post-single">
                         <figure class="post-media">
-                            <a asp-action="BlogDetail" asp-controller="Blog" asp-route-id="Blog.Id">
-                                <img src="/assets/images/blog/1_lg.jpg" @* PosterImage *@ width="870" height="420" alt="post" />
+                            <a>
+                                <img src="~/assets/images/blog/@Model.Blog.PosterImage" width="870" height="420" alt="post" />
                             </a>
                         </figure>
                         <div class="post-details">
                             <div class="post-meta">
-                                by <a href="#" class="post-author">@Model.Author</a>
-                                on <a href="#" class="post-date">@Model.CreatedDate.ToString("dd/MM/yyyy")</a>
-                                | <a href="#" class="post-comment"><span>3</span> Comments</a>
+                                by <a class="post-author">@Model.Blog.Author</a>
+                                on <a class="post-date">@Model.Blog.CreatedDate.ToString("dd/MM/yyyy")</a>
+                                | <a class="post-comment"><span>3</span> Comments</a>
                             </div>
                             <h4 class="post-title">
-                                <a asp-action="BlogDetail" asp-controller="Blog">
-                                    @Model.Title
+                                <a>
+                                    @Model.Blog.Title
                                 </a>
                             </h4>
                             <p class="post-content">
-                                @Model.Description
+                                @Model.Blog.Description
                             </p>
 
                             <div class="with-img row align-items-center">
                                 <div class="mb-6">
                                     <figure>
-                                        <img src="/assets/images/blog/single/2.jpg" @*Image*@ alt="image" width="880"
+                                        <img src="~/assets/images/blog/@Model.Blog.PosterImage" alt="image" width="880"
                                              height="415" style="max-height:415px; object-fit: contain;">
                                     </figure>
                                 </div>
@@ -50,11 +50,11 @@
 
                             <blockquote class="mt-1 mb-6 p-relative">
                                 <p class="font-weight-semi-bold ls-m">
-                                    “ @Model.FamousWord ”
+                                    “ @Model.Blog.FamousWord ”
                                 </p>
                             </blockquote>
                             <p style="max-width:100%">
-                                @Model.Content
+                                @Model.Blog.Content
                             </p>
                         </div>
 
@@ -69,13 +69,13 @@
                                 <div class="author-header d-flex justify-content-between align-items-center">
                                     <div>
                                         <span class="author-title">AUTHOR</span>
-                                        <h4 class="author-name font-weight-bold mb-0">@Model.Author</h4>
+                                        <h4 class="author-name font-weight-bold mb-0">@Model.Blog.Author</h4>
                                     </div>
 
                                 </div>
                                 <div class="author-content">
                                     <p class="mb-0">
-                                        @Model.AuthorComment
+                                        @Model.Blog.AuthorComment
                                     </p>
                                 </div>
                             </div>
@@ -83,8 +83,10 @@
                         <!-- End Author Detail -->
                         <div class="post-footer mt-7 mb-3">
                             <div class="post-tags">
-                                <a href="#" class="tag">classic</a>
-                                <a href="#" class="tag">converse</a>
+                                @foreach (var topic in Model.Blog.BlogTopic)
+                                {
+                                    <a class="tag">@topic.Topic.TopicName</a>
+                                }
                             </div>
                             <div class="social-icons">
                                 <a href="#" class="social-icon social-facebook" target="_blank"
@@ -100,16 +102,6 @@
 
 
                     
-                    <nav class="page-nav">
-                        <a class="pager-link pager-link-prev" href="#">
-                            Previous Post
-                            <span class="pager-link-title">Cras iaculis ultricies nulla</span>
-                        </a>
-                        <a class="pager-link pager-link-next" href="#">
-                            Go To Post
-                            <span class="pager-link-title">Praesent placerat risus</span>
-                        </a>
-                    </nav>
                     <!-- End Page Navigation -->
                     <div class="related-posts">
                         <h3 class="title title-simple text-left text-normal font-weight-bold ls-normal">
@@ -130,32 +122,26 @@
                                     }
                                 }">
 
-
                             @foreach (var blog in Model.Blogs)
                             {
+
                                 <div class="post">
                                     <figure class="post-media">
                                         <a href="#">
-                                            <img src="/assets/images/blog/single/3.jpg" width="380" height="250"
+                                            <img src="~/assets/images/blog/@blog.PosterImage" width="380" height="250"
                                                  alt="post" />
                                         </a>
-                                        <div class="post-calendar">
-                                            <span class="post-day">19</span>
-                                            <span class="post-month">JAN</span>
-                                        </div>
                                     </figure>
                                     <div class="post-details">
                                         <h4 class="post-title">
                                             <a href="post-single.html">
-                                                20% Off Coupon for
-                                                Week
+                                                @blog.Title
                                             </a>
                                         </h4>
                                         <p class="post-content">
-                                            Lorem ipsum dolor sit amet,onadipiscing elit, sedsd
-                                            doeiu
+                                            @blog.Description
                                         </p>
-                                        <a href="post-single.html"
+                                        <a asp-action="BlogDetail" asp-controller="Blog" asp-route-id="@blog.Id"
                                            class="btn btn-link btn-underline btn-primary">
                                             Read more<i class="d-icon-arrow-right"></i>
                                         </a>
@@ -277,139 +263,7 @@
                         </form>
                     </div>
                 </div>
-                <aside class="col-lg-3 right-sidebar sidebar-fixed sticky-sidebar-wrapper">
-                    <div class="sidebar-overlay">
-                        <a class="sidebar-close" href="#"><i class="d-icon-times"></i></a>
-                    </div>
-                    <a href="#" class="sidebar-toggle"><i class="fas fa-chevron-left"></i></a>
-                    <div class="sidebar-content">
-                        <div class="sticky-sidebar" data-sticky-options="{'top': 89, 'bottom': 70}">
-                            <div class="widget widget-search border-no mb-2">
-                                <form action="#" class="input-wrapper input-wrapper-inline btn-absolute">
-                                    <input type="text" class="form-control" name="search" autocomplete="off"
-                                           placeholder="Search in Blog" required />
-                                    <button class="btn btn-search btn-link" type="submit">
-                                        <i class="d-icon-search"></i>
-                                    </button>
-                                </form>
-                            </div>
-                            <div class="widget widget-collapsible border-no">
-                                <h3 class="widget-title">Blog Categories</h3>
-                                <ul class="widget-body filter-items search-ul">
-                                    <li><a href="#">Accessories</a></li>
-                                    <li>
-                                        <a href="#">Clothing</a>
-                                        <ul class="children">
-                                            <li><a href="#">Summer Sale</a></li>
-                                            <li><a href="#">Winter Sale</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">Musicial instruments</a>
-                                        <ul class="children">
-                                            <li><a href="#">Headphone</a></li>
-                                            <li><a href="#">Speaker</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Fashion</a></li>
-                                    <li><a href="#">Lifestyle</a></li>
-                                    <li><a href="#">Backpack & Fashion bags</a></li>
-                                </ul>
-                            </div>
-                            <div class="widget widget-collapsible">
-                                <h3 class="widget-title">Popular Posts</h3>
-                                <div class="widget-body">
-                                    <div class="post-col">
-                                        <div class="post post-list-sm">
-                                            <figure class="post-media">
-                                                <a href="post-single.html">
-                                                    <img src="/assets/images/blog/1_xs.jpg" width="90" height="90"
-                                                         alt="post" />
-                                                </a>
-                                            </figure>
-                                            <div class="post-details">
-                                                <div class="post-meta">
-                                                    <a href="#" class="post-date">Nov 22, 2020</a>
-                                                </div>
-                                                <h4 class="post-title">
-                                                    <a href="post-single.html">
-                                                        The Best
-                                                        Choice For
-                                                        Spending Time
-                                                    </a>
-                                                </h4>
-                                            </div>
-                                        </div>
-                                        <div class="post post-list-sm">
-                                            <figure class="post-media">
-                                                <a href="post-single.html">
-                                                    <img src="/assets/images/blog/2_xs.jpg" width="90" height="90"
-                                                         alt="post" />
-                                                </a>
-                                            </figure>
-                                            <div class="post-details">
-                                                <div class="post-meta">
-                                                    <a href="#" class="post-date">Jun 6, 2019</a>
-                                                </div>
-                                                <h4 class="post-title">
-                                                    <a href="post-single.html">
-                                                        Women's
-                                                        Fashion
-                                                        Summer Dress
-                                                    </a>
-                                                </h4>
-                                            </div>
-                                        </div>
-                                        <div class="post post-list-sm">
-                                            <figure class="post-media">
-                                                <a href="post-single.html">
-                                                    <img src="/assets/images/blog/3_xs.jpg" width="90" height="90"
-                                                         alt="post" />
-                                                </a>
-                                            </figure>
-                                            <div class="post-details">
-                                                <div class="post-meta">
-                                                    <a href="#" class="post-date">May 13, 2020</a>
-                                                </div>
-                                                <h4 class="post-title">
-                                                    <a href="post-single.html">
-                                                        Women’s
-                                                        Sneaker
-                                                    </a>
-                                                </h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="widget widget-collapsible">
-                                <h3 class="widget-title">About us</h3>
-                                <div class="widget-body">
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                                        nonummy nibh euismod tincidunt.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="widget widget-posts widget-collapsible">
-                                <h3 class="widget-title">Tag Cloud</h3>
-                                <div class="widget-body">
-                                    <a href="#" class="tag">Bag</a>
-                                    <a href="#" class="tag">Classic</a>
-                                    <a href="#" class="tag">Converse</a>
-                                    <a href="#" class="tag">Leather</a>
-                                    <a href="#" class="tag">Fit</a>
-                                    <a href="#" class="tag">Green</a>
-                                    <a href="#" class="tag">Man</a>
-                                    <a href="#" class="tag">Jeans</a>
-                                    <a href="#" class="tag">Women</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </aside>
-
+                
                 <!-- End Reply -->
             </div>
         </div>

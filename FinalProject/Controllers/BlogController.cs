@@ -16,27 +16,34 @@ namespace FinalProject.Controllers
 
         public  async Task<IActionResult> Index()
         {
-            var blog = await _context.Blogs.ToListAsync();
+            var blog = await _context.Blogs.Where(b => !b.isDeleted).ToListAsync();
             return View(blog);
         }
         public async Task<IActionResult> BlogDetail(int id)
         {
-            var blogList = await _context.Blogs.ToListAsync();
-            var blog = await _context.Blogs.FirstOrDefaultAsync(b => b.Id == id);
+            var blog = await _context.Blogs.Where(b => !b.isDeleted).Include(b => b.BlogTopic).ThenInclude(b => b.Topic).FirstOrDefaultAsync(b => b.Id == id);
+
+            var topics = blog.BlogTopic.Select(t => t.Topic).Select(t => t.TopicName).ToArray();
+
+            var blogList = await _context.Blogs
+            .Where(b => !b.isDeleted)
+            .Include(b => b.BlogTopic)
+            .ThenInclude(b => b.Topic)
+            .Where(b => b.Id != id && b.Topic.Any(t => topics.Contains(t.TopicName)))
+            .ToListAsync();
+
             BlogPageViewModel model = new()
             {
-                Title = blog.Title,
-                Description = blog.Description,
-                Author = blog.Author,
-                FamousWord = blog.FamousWord,
-                Content = blog.Content,
-                AuthorComment = blog.AuthorComment,
-
-                
                 Blogs = blogList,
+                Blog = blog
 
             };
+
+            
+
             return View(model);
+
         }
     }
+    
 }

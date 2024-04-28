@@ -1,0 +1,34 @@
+﻿@using FinalProject.Models;
+
+
+@{
+    ViewData["Title"] = "Detail";
+}
+
+@model Blog
+
+<div class="content-wrapper">
+    <div class="row d-flex">
+        <div class="col-lg-6 ">
+            <div class="card" style="width: fit-content;">
+                <div class="card-body">
+                    <img class="card-title card-img-top" src="~/assets/images/blog/@Model.PosterImage" style="max-width: 300px; max-height: 300px" alt="Card image cap">
+                    <h2 class="card-title">Title: @Model.Title</h2>
+                    <h5 class="card-title">Author: @Model.Author</h5>
+                    <h5 class="card-title" style=" line-height: 1.5;">AuthorComment: @Model.AuthorComment</h5>
+                    <h5 class="card-title" style=" line-height: 1.5;">Description: $@Model.Description</h5>
+                    <img class="card-title card-img-top" src="~/assets/images/blog/@Model.PosterImage" style="max-width: 300px; max-height: 300px" alt="Card image cap">
+                    <h5 class="card-title" style=" line-height: 1.5;">Content: @Model.Content</h5>
+                    <h5 class="card-title" style=" line-height: 1.5;">FamousWord: @Model.FamousWord</h5>
+
+                    <form method="post">
+                        <a asp-action="Index" class="btn btn-primary">Go Back</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

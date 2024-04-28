@@ -22,6 +22,21 @@ namespace FinalProject.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("BlogTopic", b =>
+                {
+                    b.Property<int>("BlogId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TopicId")
+                        .HasColumnType("int");
+
+                    b.HasKey("BlogId", "TopicId");
+
+                    b.HasIndex("TopicId");
+
+                    b.ToTable("BlogTopic");
+                });
+
             modelBuilder.Entity("FinalProject.Models.AppUser", b =>
                 {
                     b.Property<string>("Id")
@@ -146,6 +161,29 @@ namespace FinalProject.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Blogs");
+                });
+
+            modelBuilder.Entity("FinalProject.Models.BlogTopic", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("BlogId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TopicId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BlogId");
+
+                    b.HasIndex("TopicId");
+
+                    b.ToTable("BlogTopics");
                 });
 
             modelBuilder.Entity("FinalProject.Models.Brand", b =>
@@ -334,6 +372,23 @@ namespace FinalProject.Migrations
                     b.ToTable("ProductImages");
                 });
 
+            modelBuilder.Entity("FinalProject.Models.Topic", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("TopicName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Topics");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -467,6 +522,40 @@ namespace FinalProject.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("BlogTopic", b =>
+                {
+                    b.HasOne("FinalProject.Models.Blog", null)
+                        .WithMany()
+                        .HasForeignKey("BlogId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("FinalProject.Models.Topic", null)
+                        .WithMany()
+                        .HasForeignKey("TopicId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("FinalProject.Models.BlogTopic", b =>
+                {
+                    b.HasOne("FinalProject.Models.Blog", "Blog")
+                        .WithMany("BlogTopic")
+                        .HasForeignKey("BlogId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("FinalProject.Models.Topic", "Topic")
+                        .WithMany("BlogTopic")
+                        .HasForeignKey("TopicId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Blog");
+
+                    b.Navigation("Topic");
+                });
+
             modelBuilder.Entity("FinalProject.Models.Product", b =>
                 {
                     b.HasOne("FinalProject.Models.Brand", "Brand")
@@ -548,6 +637,11 @@ namespace FinalProject.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("FinalProject.Models.Blog", b =>
+                {
+                    b.Navigation("BlogTopic");
+                });
+
             modelBuilder.Entity("FinalProject.Models.Brand", b =>
                 {
                     b.Navigation("Product");
@@ -556,6 +650,11 @@ namespace FinalProject.Migrations
             modelBuilder.Entity("FinalProject.Models.Category", b =>
                 {
                     b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("FinalProject.Models.Topic", b =>
+                {
+                    b.Navigation("BlogTopic");
                 });
 #pragma warning restore 612, 618
         }

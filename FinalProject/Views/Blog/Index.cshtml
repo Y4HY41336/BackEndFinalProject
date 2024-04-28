@@ -26,182 +26,33 @@
                             <article class="post post-classic mb-7">
                                 <figure class="post-media overlay-zoom">
                                     <a asp-action="BlogDetail" asp-controller="Blog" asp-route-id="@blog.Id">
-                                        <img src="assets/images/blog/1_lg.jpg" @* PosterImage *@ width="870" height="420" alt="post" />
+                                        <img src="~/assets/images/blog/@blog.PosterImage" width="870" height="420" alt="post" />
                                     </a>
                                 </figure>
                                 <div class="post-details">
                                     <div class="post-meta">
-                                        by <a href="#" class="post-author">@blog.Author</a>
-                                        on <a href="#" class="post-date">@blog.CreatedDate.ToString("dd/MM/yyyy")</a>
-                                        | <a href="#" class="post-comment"><span>3</span> Comments</a>
+                                        by <a class="post-author">@blog.Author</a>
+                                        on <a class="post-date">@blog.CreatedDate.ToString("dd/MM/yyyy")</a>
+                                        | <a class="post-comment"><span>3</span> Comments</a>
                                     </div>
                                     <h4 class="post-title">
-                                        <a asp-action="BlogDetail" asp-controller="Blog">
+                                        <a asp-action="BlogDetail" asp-controller="Blog" asp-route-id="@blog.Id">
                                             @blog.Title
                                         </a>
                                     </h4>
                                     <p class="post-content">
                                         @blog.Description
                                     </p>
-                                    <a asp-action="BlogDetail" asp-controller="Blog" class="btn btn-link btn-underline btn-primary">
+                                    <a asp-action="BlogDetail" asp-controller="Blog" asp-route-id="@blog.Id" class="btn btn-link btn-underline btn-primary">
                                         Read
                                         more<i class="d-icon-arrow-right"></i>
                                     </a>
                                 </div>
                             </article>
 
-                        }                        
+                        }
                     </div>
-                    <ul class="pagination">
-                        <li class="page-item disabled">
-                            <a class="page-link page-link-prev" href="#" aria-label="Previous" tabindex="-1"
-                               aria-disabled="true">
-                                <i class="d-icon-arrow-left"></i>Prev
-                            </a>
-                        </li>
-                        <li class="page-item active" aria-current="page">
-                            <a class="page-link" href="#">1</a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item">
-                            <a class="page-link page-link-next" href="#" aria-label="Next">
-                                Next<i class="d-icon-arrow-right"></i>
-                            </a>
-                        </li>
-                    </ul>
                 </div>
-                <aside class="col-lg-3 right-sidebar sidebar-fixed sticky-sidebar-wrapper">
-                    <div class="sidebar-overlay">
-                        <a class="sidebar-close" href="#"><i class="d-icon-times"></i></a>
-                    </div>
-                    <a href="#" class="sidebar-toggle"><i class="fas fa-chevron-left"></i></a>
-                    <div class="sidebar-content">
-                        <div class="sticky-sidebar" data-sticky-options="{'top': 89, 'bottom': 70}">
-                            <div class="widget widget-search border-no mb-2">
-                                <form action="#" class="input-wrapper input-wrapper-inline btn-absolute">
-                                    <input type="text" class="form-control" name="search" autocomplete="off"
-                                           placeholder="Search in Blog" required />
-                                    <button class="btn btn-search btn-link" type="submit">
-                                        <i class="d-icon-search"></i>
-                                    </button>
-                                </form>
-                            </div>
-                            <div class="widget widget-collapsible border-no">
-                                <h3 class="widget-title">Blog Categories</h3>
-                                <ul class="widget-body filter-items search-ul">
-                                    <li><a href="#">Accessories</a></li>
-                                    <li>
-                                        <a href="#">Clothing</a>
-                                        <ul class="children">
-                                            <li><a href="#">Summer Sale</a></li>
-                                            <li><a href="#">Winter Sale</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">Musicial instruments</a>
-                                        <ul class="children">
-                                            <li><a href="#">Headphone</a></li>
-                                            <li><a href="#">Speaker</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Fashion</a></li>
-                                    <li><a href="#">Lifestyle</a></li>
-                                    <li><a href="#">Backpack & Fashion bags</a></li>
-                                </ul>
-                            </div>
-                            <div class="widget widget-collapsible">
-                                <h3 class="widget-title">Popular Posts</h3>
-                                <div class="widget-body">
-                                    <div class="post-col">
-                                        <div class="post post-list-sm">
-                                            <figure class="post-media">
-                                                <a href="post-single.html">
-                                                    <img src="assets/images/blog/1_xs.jpg" width="90" height="90"
-                                                         alt="post" />
-                                                </a>
-                                            </figure>
-                                            <div class="post-details">
-                                                <div class="post-meta">
-                                                    <a href="#" class="post-date">Nov 22, 2020</a>
-                                                </div>
-                                                <h4 class="post-title">
-                                                    <a href="post-single.html">
-                                                        The Best
-                                                        Choice For
-                                                        Spending Time
-                                                    </a>
-                                                </h4>
-                                            </div>
-                                        </div>
-                                        <div class="post post-list-sm">
-                                            <figure class="post-media">
-                                                <a href="post-single.html">
-                                                    <img src="assets/images/blog/2_xs.jpg" width="90" height="90"
-                                                         alt="post" />
-                                                </a>
-                                            </figure>
-                                            <div class="post-details">
-                                                <div class="post-meta">
-                                                    <a href="#" class="post-date">Jun 6, 2019</a>
-                                                </div>
-                                                <h4 class="post-title">
-                                                    <a href="post-single.html">
-                                                        Women's
-                                                        Fashion
-                                                        Summer Dress
-                                                    </a>
-                                                </h4>
-                                            </div>
-                                        </div>
-                                        <div class="post post-list-sm">
-                                            <figure class="post-media">
-                                                <a href="post-single.html">
-                                                    <img src="assets/images/blog/3_xs.jpg" width="90" height="90"
-                                                         alt="post" />
-                                                </a>
-                                            </figure>
-                                            <div class="post-details">
-                                                <div class="post-meta">
-                                                    <a href="#" class="post-date">May 13, 2020</a>
-                                                </div>
-                                                <h4 class="post-title">
-                                                    <a href="post-single.html">
-                                                        Women’s
-                                                        Sneaker
-                                                    </a>
-                                                </h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="widget widget-collapsible">
-                                <h3 class="widget-title">About us</h3>
-                                <div class="widget-body">
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                                        nonummy nibh euismod tincidunt.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="widget widget-posts widget-collapsible">
-                                <h3 class="widget-title">Tag Cloud</h3>
-                                <div class="widget-body">
-                                    <a href="#" class="tag">Bag</a>
-                                    <a href="#" class="tag">Classic</a>
-                                    <a href="#" class="tag">Converse</a>
-                                    <a href="#" class="tag">Leather</a>
-                                    <a href="#" class="tag">Fit</a>
-                                    <a href="#" class="tag">Green</a>
-                                    <a href="#" class="tag">Man</a>
-                                    <a href="#" class="tag">Jeans</a>
-                                    <a href="#" class="tag">Women</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </aside>
             </div>
         </div>
     </div>

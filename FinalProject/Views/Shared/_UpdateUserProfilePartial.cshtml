@@ -1,0 +1,43 @@
+﻿@model UserUpdateViewModel
+
+<div class="tab-pane active" id="account">
+	<form asp-action="UpdateProfile" method="post" class="form">
+		<div class="row">
+			<div class="col-sm-12">
+				<label class="mt-4">Fullname</label>
+				<input asp-for="Fullname" class="form-control mb-0" placeholder="Fullname">
+				<span asp-validation-for="Fullname" class="text-danger"></span>
+			</div>
+		</div>
+
+		<label class="mt-4">Username</label>
+		<input asp-for="UserName" class="form-control mb-0" placeholder="Fullname">
+		<span asp-validation-for="UserName" class="text-danger"></span>
+
+		<label class="mt-4">Email Address</label>
+		<input asp-for="Email" class="form-control mb-0" placeholder="Fullname">
+		<span asp-validation-for="Email" class="text-danger"></span>
+		<fieldset>
+			<legend>Password Change</legend>
+			<label class="mt-4">Current password (leave blank to leave unchanged)</label>
+			<input asp-for="CurrentPassword" placeholder="Current password" class="form-control mb-0" />
+			<span asp-validation-for="CurrentPassword" class="text-danger"></span>
+
+			<label class="mt-4">New password (leave blank to leave unchanged)</label>
+			<input asp-for="NewPassword" placeholder="New password" class="form-control mb-0" />
+			<span asp-validation-for="NewPassword" class="text-danger"></span>
+
+			<label class="mt-4">Confirm new password</label>
+			<input asp-for="ConfirmNewPassword" placeholder="Confirm new password" class="form-control mb-0" />
+			<span asp-validation-for="ConfirmNewPassword" class="text-danger"></span>
+		</fieldset>
+		@if (TempData["SuccessMessage"] != null)
+		{
+			<div class="text-success mb-3">
+				@TempData["SuccessMessage"].ToString()
+			</div>
+		}
+		<button type="submit" class="btn btn-primary">SAVE CHANGES</button>
+	</form>
+</div>
+

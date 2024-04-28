@@ -82,11 +82,11 @@
 						</div>
 						@if (Model.isStocked)
 						{
-							<ins class="new-price">$@Model.Price</ins>
+							<div class="product-price">$@Model.Price</div>
 						}
 						else
 						{
-							<ins class="new-price text-danger" style="text-decoration:none;">Out of Stock</ins>
+							<div class="product-price text-danger">Out of Stock</div>
 						}
 						<div class="ratings-container">
 							<div class="ratings-full">

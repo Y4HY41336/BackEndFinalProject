@@ -17,6 +17,11 @@
         public string PosterImage { get; set; }
         public string Image { get; set; }
 
+		public ICollection<BlogTopic> BlogTopic { get; set; } = null!;
+		public List<Topic> Topic { get; set; } = null!;
 
-    }
+
+
+
+	}
 }
