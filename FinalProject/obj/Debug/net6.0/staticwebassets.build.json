@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "HzLm+R6ImkPgIHiixCP15+fS5jZYOhX3L9lmHrs1hCI=",
+  "Hash": "UH7T1pEtjsuvP92q2C3vPZOBfLmLYCFhJ3yR2mUbALE=",
   "Source": "FinalProject",
   "BasePath": "_content/FinalProject",
   "Mode": "Default",
@@ -59226,6 +59226,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\video\\memory-of-a-woman.mp4"
+    },
+    {
+      "Identity": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\BackEndFinalProject\\FinalProject\\wwwroot\\backend\\js\\Script.js",
+      "SourceId": "FinalProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\BackEndFinalProject\\FinalProject\\wwwroot\\",
+      "BasePath": "_content/FinalProject",
+      "RelativePath": "backend/js/Script.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\backend\\js\\Script.js"
     }
   ]
 }

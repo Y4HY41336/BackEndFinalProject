@@ -38,7 +38,18 @@ namespace FinalProject.Controllers
                 return View(null);
             }
         }
+        public async Task<IActionResult> LoadMore(int skip)
+        {
+            int productCount = await _context.Products.Where(p => !p.isDeleted).CountAsync();
+            if (skip >= productCount)
+                return BadRequest();
 
+            List<Product> products = await _context.Products.Where(p => !p.isDeleted)
+                .Include(p => p.Category)
+                .Skip(skip).Take(8).ToListAsync();
+
+            return PartialView("_ProductPartial", products);
+        }
 
     }
 }

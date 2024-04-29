@@ -13933,6 +13933,10 @@
       "PackagePath": "staticwebassets\\assets\\video\\memory-of-a-woman.mp4"
     },
     {
+      "Id": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\BackEndFinalProject\\FinalProject\\wwwroot\\backend\\js\\Script.js",
+      "PackagePath": "staticwebassets\\backend\\js\\Script.js"
+    },
+    {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.FinalProject.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

@@ -134,9 +134,15 @@
                     <div class="row cols-2 cols-sm-3 product-wrapper">
                         @await Component.InvokeAsync("Product");
                     </div>
+                    <div class="load-more-wrapper d-flex justify-content-center align-items-center mt-5" id="loadMore">
+                        <button class="btn btn-outline-success" id="loadMoreBtn">Load More</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </main>
 
+@section Scripts {
+    <script src="~/backend/js/script.js" asp-append-version="true"></script>
+}

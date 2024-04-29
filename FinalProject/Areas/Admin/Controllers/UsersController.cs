@@ -1,5 +1,6 @@
 ﻿using FinalProject.Areas.Admin.ViewModel;
 using FinalProject.Context;
+using FinalProject.Helpers.Enums;
 using FinalProject.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -34,12 +35,17 @@ public class UsersController : Controller
 
         foreach (var user in users)
         {
-            var rolesForUser = await _userManager.GetRolesAsync(user);
-            UserRoles.Add(new UserViewModel
+            if (user.UserName != User.Identity.Name)
             {
-                User = user,
-                Roles = rolesForUser,
-            });
+                var rolesForUser = await _userManager.GetRolesAsync(user);
+                UserRoles.Add(new UserViewModel
+                {
+                    User = user,
+                    Roles = rolesForUser,
+                });
+
+            }
+            
         }
         return View(UserRoles);
     }
@@ -76,16 +82,39 @@ public class UsersController : Controller
         }
         await _context.SaveChangesAsync();
         return RedirectToAction("Index", "Users");
+
     }
 
-    public async Task<IActionResult> UpdateRole(string id)
-    {
-        var user = await _userManager.FindByNameAsync(id);
+    //public async Task<IActionResult> UpdateRole(string id)
+    //{
+    //    ViewBag.AllRoles = await _roleManager.Roles.ToListAsync();
 
-        if (user == null)
-        {
-            return NotFound();
-        }
-        return View(user);
-    }
+    //    var user = await _userManager.FindByNameAsync(id);
+    //    var roles = await _userManager.GetRolesAsync(user);
+
+    //    if (user == null)
+    //    {
+    //        return NotFound();
+    //    }
+
+    //    UserViewModel model = new()
+    //    {
+    //        User = user,
+    //        Roles = roles
+    //    };
+
+    //    return View(model);
+    //}
+
+
+    //[HttpPost]
+    //public async Task<IActionResult> UpdateRole(string id, UserUpdateViewModel model)
+    //{
+    //    var user = await _userManager.FindByNameAsync(id);
+    //    UserViewModel users = new();
+
+    //    await _context.SaveChangesAsync();
+
+    //    return RedirectToAction(nameof(Index));
+    //}
 }
