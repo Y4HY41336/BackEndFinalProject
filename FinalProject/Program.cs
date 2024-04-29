@@ -43,7 +43,12 @@ app.MapControllerRoute(
     pattern: "{controller=home}/{action=Index}/{id?}"
 
     );
-
+app.MapControllerRoute(
+    "Product",
+    "Product/{productId}",
+    new { controller = "Product", action = "DetailsByName" },
+    new { productId = @"\w+" }
+ );
 
 app.Run();
 

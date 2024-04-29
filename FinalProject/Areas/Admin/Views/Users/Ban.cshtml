@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Ban";
+}
+
+@model AppUser
+
+<div class="content-wrapper">
+    <div class="row d-flex">
+        <div class="col-lg-6 ">
+            <div class="card" style="width: fit-content;">
+                <div class="card-body">
+                    <img class="card-title card-img-top" src="~/assets/images/blog/@Model.ProfilePhoto" style="max-width: 300px; max-height: 300px" alt="Card image cap">
+                    <h2 class="card-title">Username: @Model.UserName</h2>
+                    @if (Model.IsActive)
+                    {
+                        <p class="text-danger">This action will deactivate this person's account!</p>
+
+                    }
+                    else
+                    {
+                        <p class="text-success">This action will activate this person's account!</p>
+                    }
+                    @* <h5 class="card-title">Roles: @Model.Author</h5> *@
+
+                    <form method="post">
+                        @if (Model.IsActive)
+                        {
+                            <button type="submit" class="btn btn-danger">Ban</button>
+
+                        }
+                        else
+                        {
+                            <button type="submit" class="btn btn-success">Unban</button>
+                        }
+                        
+                        <a asp-action="Index" class="btn btn-primary">Go Back</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
