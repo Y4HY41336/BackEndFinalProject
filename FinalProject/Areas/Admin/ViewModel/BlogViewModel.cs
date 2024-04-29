@@ -26,7 +26,7 @@ namespace FinalProject.Areas.Admin.ViewModel
 
         [Required]
         public IFormFile PosterImage { get; set; } = null!;
-        //public IFormFile Image { get; set; } = null!;
+        public IFormFile Image { get; set; } = null!;
 
     }
 }

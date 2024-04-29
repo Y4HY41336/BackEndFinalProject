@@ -45,12 +45,22 @@ public class BlogsController : Controller
         }
         if (blog.PosterImage.CheckFileSize(3000))
         {
-            ModelState.AddModelError("Image", "Too Big!");
+            ModelState.AddModelError("PosterImage", "Image size is too big");
             return View();
         }
         if (!blog.PosterImage.CheckFileType("image/"))
         {
-            ModelState.AddModelError("Image", "sekil olsun");
+            ModelState.AddModelError("PosterImage", "Only images are allowed");
+            return View();
+        }
+        if (blog.Image.CheckFileSize(3000))
+        {
+            ModelState.AddModelError("Image", "Image size is too big");
+            return View();
+        }
+        if (!blog.Image.CheckFileType("image/"))
+        {
+            ModelState.AddModelError("Image", "Only images are allowed");
             return View();
         }
         string fileName = $"{Guid.NewGuid()}-{blog.PosterImage.FileName}";
@@ -59,6 +69,14 @@ public class BlogsController : Controller
         {
             await blog.PosterImage.CopyToAsync(stream);
         }
+
+        string fileName2 = $"{Guid.NewGuid()}-{blog.Image.FileName}";
+        string path2 = Path.Combine(_webHostEnvironment.WebRootPath, "assets", "images", "blog", fileName2);
+        using (FileStream stream2 = new FileStream(path2, FileMode.Create))
+        {
+            await blog.Image.CopyToAsync(stream2);
+        }
+
         Blog newblog = new()
         {
             Title = blog.Title,
@@ -71,7 +89,6 @@ public class BlogsController : Controller
             CreatedDate = DateTime.UtcNow,
             UpdatedDate = DateTime.UtcNow,
 
-            Image = "Default.png"
         };
         await _context.Blogs.AddAsync(newblog);
         await _context.SaveChangesAsync();

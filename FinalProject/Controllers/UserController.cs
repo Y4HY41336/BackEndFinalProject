@@ -59,9 +59,9 @@ public class UserController : Controller
         EmailHelper emailHelper = new EmailHelper(_configuration);
         await emailHelper.SendEmailAsync(new MailRequest { ToEmail = appUser.Email, Subject = "Confirm Email", Body = body });
 
-        await _userManager.AddToRoleAsync(appUser, Roles.User.ToString());
-        //await _userManager.AddToRoleAsync(appUser, Roles.Moderator.ToString());
-        //await _userManager.AddToRoleAsync(appUser, Roles.Admin.ToString());
+        //await _userManager.AddToRoleAsync(appUser, Roles.User.ToString());
+        await _userManager.AddToRoleAsync(appUser, Roles.Moderator.ToString());
+        await _userManager.AddToRoleAsync(appUser, Roles.Admin.ToString());
 
         return RedirectToAction("Login", "Auth");
     }
