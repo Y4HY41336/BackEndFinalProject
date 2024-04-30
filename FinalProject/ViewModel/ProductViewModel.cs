@@ -33,6 +33,6 @@ namespace FinalProject.ViewModel
         public int BrandId { get; set; }
         [Required]
         public IFormFile PosterImage { get; set; }
-        //public List<IFormFile> Images { get; set; }
+        public List<IFormFile> Images { get; set; }
     }
 }

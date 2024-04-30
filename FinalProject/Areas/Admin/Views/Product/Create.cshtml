@@ -76,6 +76,26 @@
                             <span asp-validation-for="PosterImage" class="text-danger"></span>
                         </div>
                         <div class="form-group">
+                            <label for="exampleInputPassword1">Image1</label>
+                            <input type="file" class="form-control" asp-for="Images" placeholder="Image">
+                            <span asp-validation-for="Images" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Image2</label>
+                            <input type="file" class="form-control" asp-for="Images" placeholder="Image">
+                            <span asp-validation-for="Images" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Image3</label>
+                            <input type="file" class="form-control" asp-for="Images" placeholder="Image">
+                            <span asp-validation-for="Images" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Image4</label>
+                            <input type="file" class="form-control" asp-for="Images" placeholder="Image">
+                            <span asp-validation-for="Images" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
                             <label for="exampleFormControlSelect2">Categories</label>
                             <select class="form-control" id="exampleFormControlSelect2" name="categoryId">
                                 @foreach (Category category in ViewBag.Categories)

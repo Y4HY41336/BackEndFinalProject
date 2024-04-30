@@ -34,7 +34,7 @@ namespace FinalProject.Migrations
 
                     b.HasIndex("TopicId");
 
-                    b.ToTable("BlogTopic");
+                    b.ToTable("BlogTopic", (string)null);
                 });
 
             modelBuilder.Entity("FinalProject.Models.AppUser", b =>
@@ -137,7 +137,7 @@ namespace FinalProject.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("BasketItems");
+                    b.ToTable("BasketItems", (string)null);
                 });
 
             modelBuilder.Entity("FinalProject.Models.Blog", b =>
@@ -191,7 +191,7 @@ namespace FinalProject.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Blogs");
+                    b.ToTable("Blogs", (string)null);
                 });
 
             modelBuilder.Entity("FinalProject.Models.BlogTopic", b =>
@@ -214,7 +214,7 @@ namespace FinalProject.Migrations
 
                     b.HasIndex("TopicId");
 
-                    b.ToTable("BlogTopics");
+                    b.ToTable("BlogTopics", (string)null);
                 });
 
             modelBuilder.Entity("FinalProject.Models.Brand", b =>
@@ -244,7 +244,7 @@ namespace FinalProject.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Brands");
+                    b.ToTable("Brands", (string)null);
                 });
 
             modelBuilder.Entity("FinalProject.Models.Category", b =>
@@ -274,7 +274,7 @@ namespace FinalProject.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("FinalProject.Models.Comment", b =>
@@ -299,7 +299,7 @@ namespace FinalProject.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Comments");
+                    b.ToTable("Comments", (string)null);
                 });
 
             modelBuilder.Entity("FinalProject.Models.Product", b =>
@@ -378,7 +378,7 @@ namespace FinalProject.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
                 });
 
             modelBuilder.Entity("FinalProject.Models.ProductImage", b =>
@@ -400,7 +400,7 @@ namespace FinalProject.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ProductImages");
+                    b.ToTable("ProductImages", (string)null);
                 });
 
             modelBuilder.Entity("FinalProject.Models.Topic", b =>
@@ -417,7 +417,7 @@ namespace FinalProject.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Topics");
+                    b.ToTable("Topics", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

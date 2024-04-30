@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\aliyahyahs\\Desktop\\Backend\\BackEndFinalProject\\FinalProject\\FinalProject.csproj": {}
+    "C:\\Users\\user\\Desktop\\Code\\FinalProject\\BackEndFinalProject\\FinalProject\\FinalProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\aliyahyahs\\Desktop\\Backend\\BackEndFinalProject\\FinalProject\\FinalProject.csproj": {
+    "C:\\Users\\user\\Desktop\\Code\\FinalProject\\BackEndFinalProject\\FinalProject\\FinalProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\aliyahyahs\\Desktop\\Backend\\BackEndFinalProject\\FinalProject\\FinalProject.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\BackEndFinalProject\\FinalProject\\FinalProject.csproj",
         "projectName": "FinalProject",
-        "projectPath": "C:\\Users\\aliyahyahs\\Desktop\\Backend\\BackEndFinalProject\\FinalProject\\FinalProject.csproj",
-        "packagesPath": "C:\\Users\\aliyahyahs\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\aliyahyahs\\Desktop\\Backend\\BackEndFinalProject\\FinalProject\\obj\\",
+        "projectPath": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\BackEndFinalProject\\FinalProject\\FinalProject.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\user\\Desktop\\Code\\FinalProject\\BackEndFinalProject\\FinalProject\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\aliyahyahs\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -94,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

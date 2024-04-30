@@ -17,7 +17,9 @@ public class ProductController : Controller
     }
     public async Task<IActionResult> ProductDetail(int id)
     {
+        ViewBag.Id = id;
         var products = await _context.Products/*.Where(p => p.isStocked)*/.Include(p => p.Category).Include(p => p.Brand).FirstOrDefaultAsync(p => p.Id == id);
+        var productImage = await _context.ProductImages.Where(p => p.ProductId == id).ToListAsync();
 		if (products == null)
         {
             return NotFound();
@@ -38,6 +40,8 @@ public class ProductController : Controller
             RecommendedUse = products.RecommendedUse,
             Manufacturer = products.Manufacturer,
             isStocked = products.isStocked,
+
+            productImage = productImage,
         };
         return View(model);
     }

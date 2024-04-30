@@ -60,11 +60,17 @@ public class ProductController : Controller
             ModelState.AddModelError("PosterImage", "Only images are allowed");
             return View();
         }
+
         string fileName = $"{Guid.NewGuid()}-{products.PosterImage.FileName}";
         string path = Path.Combine(_webHostEnvironment.WebRootPath, "assets", "images", "shop", fileName);
         FileStream stream = new FileStream(path, FileMode.Create);
         await products.PosterImage.CopyToAsync(stream);
         stream.Dispose();
+
+        var images = products.Images;
+
+        
+
         Product newproduct = new()
         {
             Title = products.Title,
@@ -86,6 +92,22 @@ public class ProductController : Controller
             CreatedDate = DateTime.UtcNow,
             UpdatedDate = DateTime.UtcNow,
         };
+
+        foreach (var image in images)
+        {
+            string newfileName = $"{Guid.NewGuid()}-{image.FileName}";
+            string newpath = Path.Combine(_webHostEnvironment.WebRootPath, "assets", "images", "shop", newfileName);
+            FileStream newstream = new FileStream(newpath, FileMode.Create);
+            await image.CopyToAsync(newstream);
+            stream.Dispose();
+
+            ProductImage productImage = new()
+            {
+                Image = newfileName,
+                Product = newproduct,
+            };
+            await _context.ProductImages.AddAsync(productImage);
+        }
 
         await _context.Products.AddAsync(newproduct);
         await _context.SaveChangesAsync();

@@ -17,17 +17,22 @@ namespace FinalProject.ViewComponents
             _context = context;
             _userManager = userManager;
         }
+
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            var productsCookieViewModel = new List<BasketItem>();
+            HeaderViewModel model = new();
             if (User.Identity.IsAuthenticated)
             {
                 var user = await _userManager.FindByNameAsync(User.Identity.Name);
-                var basketItems = await _context.BasketItems.Where(b => b.AppUserId == user.Id).ToListAsync();
-
-                return View(basketItems);
+                var basketItems = await _context.BasketItems.Where(b => b.AppUserId == user.Id).Include(b => b.Product).ToListAsync();
+                model.BasketItem = basketItems;
+                model.TotalPrice = Math.Round(basketItems.Sum(b => b.Product.Price * b.Count), 2);
             }
-            return View(productsCookieViewModel);
+
+
+
+            return View(model);
+
         }
     }
 }

@@ -25,5 +25,7 @@ namespace FinalProject.ViewModel
 		public string RecommendedUse { get; set; } = null!;
 		public string Manufacturer { get; set; } = null!;
 
-	}
+        public List<ProductImage> productImage { get; set; }
+
+    }
 }

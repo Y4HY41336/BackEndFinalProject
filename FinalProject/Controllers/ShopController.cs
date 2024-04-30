@@ -85,7 +85,35 @@ namespace FinalProject.Controllers
             }
 
             await _context.SaveChangesAsync();
+
             return RedirectToAction("Index");
+        }
+        [Authorize]
+        public async Task<IActionResult> DeleteBasket(int productId)
+        {
+            var products = await _context.Products.FirstOrDefaultAsync(p => p.Id == productId);
+            if (products == null)
+            {
+                return NotFound();
+            }
+
+            var user = await _userManager.FindByNameAsync(User.Identity.Name);
+
+            var basketItem = await _context.BasketItems.FirstOrDefaultAsync(b => b.ProductId == productId && b.AppUserId == user.Id);
+
+            if (basketItem.Count <= 1)
+            {
+                _context.Remove(basketItem);
+
+            }
+            else if(basketItem.Count > 1)
+            {
+                basketItem.Count--;
+            }
+            
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index");
+
 
         }
 
