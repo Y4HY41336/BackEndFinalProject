@@ -69,7 +69,7 @@ public class ProductController : Controller
 
         var images = products.Images;
 
-        
+
 
         Product newproduct = new()
         {
@@ -95,6 +95,20 @@ public class ProductController : Controller
 
         foreach (var image in images)
         {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+            if (image.CheckFileSize(3000))
+            {
+                ModelState.AddModelError("Images", "Image size is too big");
+                return View();
+            }
+            if (!image.CheckFileType("image/"))
+            {
+                ModelState.AddModelError("Images", "Only images are allowed");
+                return View();
+            }
             string newfileName = $"{Guid.NewGuid()}-{image.FileName}";
             string newpath = Path.Combine(_webHostEnvironment.WebRootPath, "assets", "images", "shop", newfileName);
             FileStream newstream = new FileStream(newpath, FileMode.Create);
@@ -137,6 +151,24 @@ public class ProductController : Controller
         }
 
         string path = Path.Combine(_webHostEnvironment.WebRootPath, "assets", "images", "shop", products.PosterImage);
+
+        var images = await _context.ProductImages.Where(p => p.ProductId == id).ToListAsync();
+        foreach (var image in images)
+        {
+            string newpath = Path.Combine(_webHostEnvironment.WebRootPath, "assets", "images", "shop", image.Image);
+            if (System.IO.File.Exists(path))
+            {
+                System.IO.File.Delete(path);
+            }
+
+            var deletedImage = await _context.ProductImages.FirstOrDefaultAsync(p => p.ProductId == id);
+            if (deletedImage != null)
+            {
+                _context.ProductImages.Remove(deletedImage);
+                await _context.SaveChangesAsync();
+            }
+
+        }
 
         if (System.IO.File.Exists(path))
         {

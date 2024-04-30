@@ -86,6 +86,7 @@ public class BlogsController : Controller
             FamousWord = blog.FamousWord,
             AuthorComment = blog.AuthorComment,
             PosterImage = fileName,
+            Image = fileName2,
             CreatedDate = DateTime.UtcNow,
             UpdatedDate = DateTime.UtcNow,
 
@@ -179,13 +180,13 @@ public class BlogsController : Controller
         {
             if (blog.PosterImage.CheckFileSize(3000))
             {
-                ModelState.AddModelError("Image", "Image size is too big");
+                ModelState.AddModelError("PosterImage", "Image size is too big");
                 return View();
             }
 
             if (!blog.PosterImage.CheckFileType("image/"))
             {
-                ModelState.AddModelError("Image", "Only images are allowed");
+                ModelState.AddModelError("PosterImage", "Only images are allowed");
                 return View();
             }
 
@@ -206,7 +207,37 @@ public class BlogsController : Controller
             }
             updateblog.PosterImage = fileName;
         }
+        if (blog.Image != null)
+        {
+            if (blog.Image.CheckFileSize(3000))
+            {
+                ModelState.AddModelError("Image", "Image size is too big");
+                return View();
+            }
 
+            if (!blog.Image.CheckFileType("image/"))
+            {
+                ModelState.AddModelError("Image", "Only images are allowed");
+                return View();
+            }
+
+            string basePath2 = Path.Combine(_webHostEnvironment.WebRootPath, "assets", "images", "blog");
+            string path2 = Path.Combine(basePath2, updateblog.Image);
+
+            if (System.IO.File.Exists(path2))
+            {
+                System.IO.File.Delete(path2);
+            }
+
+            string fileName2 = $"{Guid.NewGuid()}-{blog.Image.FileName}";
+            path2 = Path.Combine(basePath2, fileName2);
+
+            using (FileStream stream2 = new FileStream(path2, FileMode.Create))
+            {
+                await blog.Image.CopyToAsync(stream2);
+            }
+            updateblog.Image = fileName2;
+        }
 
         updateblog.Title = blog.Title;
         updateblog.Description = blog.Description;

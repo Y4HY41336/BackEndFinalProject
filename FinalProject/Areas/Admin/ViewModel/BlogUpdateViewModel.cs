@@ -25,6 +25,6 @@ namespace FinalProject.Areas.Admin.ViewModel
         public DateTime UpdatedDate { get; set; }
 
         public IFormFile? PosterImage { get; set; } = null!;
-        //public IFormFile? Image { get; set; } = null!;
+        public IFormFile? Image { get; set; } = null!;
     }
 }
