@@ -4,7 +4,7 @@
 
 namespace FinalProject.Migrations
 {
-    public partial class basket : Migration
+    public partial class Basket : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
