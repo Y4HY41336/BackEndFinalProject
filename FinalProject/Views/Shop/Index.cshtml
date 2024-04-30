@@ -117,22 +117,11 @@
                                class="toolbox-item left-sidebar-toggle btn btn-sm btn-outline btn-primary btn-rounded btn-icon-right d-lg-none">
                                 Filter<i class="d-icon-arrow-right"></i>
                             </a>
-                            <div class="toolbox-item toolbox-sort select-box text-dark">
-                                <label>Sort By :</label>
-                                <select name="orderby" class="form-control">
-                                    <option value="default">Default</option>
-                                    <option value="popularity" selected="selected">Most Popular</option>
-                                    <option value="rating">Average rating</option>
-                                    <option value="date">Latest</option>
-                                    <option value="price-low">Sort forward price low</option>
-                                    <option value="price-high">Sort forward price high</option>
-                                    <option value="">Clear custom sort</option>
-                                </select>
-                            </div>
                         </div>
                     </nav>
-                    <div class="row cols-2 cols-sm-3 product-wrapper">
-                        @await Component.InvokeAsync("Product");
+                    <div class="row cols-2 cols-sm-3 product-wrapper" id="productBox">
+                        <input id="productCount" value="@ViewBag.ProductCount" hidden />
+                        @await Component.InvokeAsync("Product")
                     </div>
                     <div class="load-more-wrapper d-flex justify-content-center align-items-center mt-5" id="loadMore">
                         <button class="btn btn-outline-success" id="loadMoreBtn">Load More</button>
@@ -143,6 +132,3 @@
     </div>
 </main>
 
-@section Scripts {
-    <script src="~/backend/js/script.js" asp-append-version="true"></script>
-}

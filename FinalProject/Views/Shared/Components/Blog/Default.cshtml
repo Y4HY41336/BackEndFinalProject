@@ -1,0 +1,40 @@
+﻿@{
+    Layout = null;
+}
+
+@model List<Blog>
+
+
+@foreach (var blog in Model)
+{
+    <div class="blog-post mb-4">
+        <article class="post post-classic mb-7">
+            <figure class="post-media overlay-zoom">
+                <a asp-action="BlogDetail" asp-controller="Blog" asp-route-id="@blog.Id">
+                    <img src="~/assets/images/blog/@blog.PosterImage" width="870" height="420" alt="post" />
+                </a>
+            </figure>
+            <div class="post-details">
+                <div class="post-meta">
+                    by <a class="post-author">@blog.Author</a>
+                    on <a class="post-date">@blog.CreatedDate.ToString("dd/MM/yyyy")</a>
+                    | <a class="post-comment"><span>3</span> Comments</a>
+                </div>
+                <h4 class="post-title">
+                    <a asp-action="BlogDetail" asp-controller="Blog" asp-route-id="@blog.Id">
+                        @blog.Title
+                    </a>
+                </h4>
+                <p class="post-content">
+                    @blog.Description
+                </p>
+                <a asp-action="BlogDetail" asp-controller="Blog" asp-route-id="@blog.Id" class="btn btn-link btn-underline btn-primary">
+                    Read
+                    more<i class="d-icon-arrow-right"></i>
+                </a>
+            </div>
+        </article>
+
+    </div>
+}
+

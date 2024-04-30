@@ -186,6 +186,7 @@
             <div class="container">
                 <h2 class="title title-center mb-5">Our Categories</h2>
                 <div class="row">
+
                     @foreach (var category in Model.Categories)
                     {
                         <div class="col-xs-6 col-lg-3 mb-4">
@@ -193,7 +194,7 @@
                                 <a asp-action="Index" asp-controller="Shop">
                                     <figure class="category-media">
                                         <img src="assets/images/categories/@category.Image" alt="category" width="280"
-                                         height="280" style="background-color: #8c8c8d;" />
+                                             height="280" style="background-color: #8c8c8d;" />
                                     </figure>
                                 </a>
                                 <div class="category-content">
@@ -208,6 +209,8 @@
 
                     }
                 </div>
+
+
             </div>
         </section>
 
@@ -243,13 +246,13 @@
                         <figure class="product-media">
                             <a asp-controller="Product" asp-action="ProductDetail" asp-route-id="@product.Id">
                                 <img src="~/assets/images/shop/@product.PosterImage" alt="Blue Pinafore Denim Dress"
-                                 width="280" height="315" style="background-color: #f2f3f5;" />
+                                     width="280" height="315" style="background-color: #f2f3f5;" />
                             </a>
                             <div class="product-label-group">
                             </div>
                             <div class="product-action-vertical">
                                 <a href="#" class="btn-product-icon btn-cart" data-toggle="modal"
-                               data-target="#addCartModal" title="Add to cart"><i class="d-icon-bag"></i></a>
+                                   data-target="#addCartModal" title="Add to cart"><i class="d-icon-bag"></i></a>
                                 <a href="#" class="btn-product-icon btn-wishlist" title="Add to wishlist">
                                     <i class="d-icon-heart"></i>
                                 </a>
@@ -323,13 +326,13 @@
                         <figure class="product-media">
                             <a asp-controller="Product" asp-action="ProductDetail" asp-route-id="@product.Id">
                                 <img src="~/assets/images/shop/@product.PosterImage" alt="Blue Pinafore Denim Dress"
-                                 width="280" height="315" style="background-color: #f2f3f5;" />
+                                     width="280" height="315" style="background-color: #f2f3f5;" />
                             </a>
                             <div class="product-label-group">
                             </div>
                             <div class="product-action-vertical">
                                 <a href="#" class="btn-product-icon btn-cart" data-toggle="modal"
-                               data-target="#addCartModal" title="Add to cart"><i class="d-icon-bag"></i></a>
+                                   data-target="#addCartModal" title="Add to cart"><i class="d-icon-bag"></i></a>
                                 <a href="#" class="btn-product-icon btn-wishlist" title="Add to wishlist">
                                     <i class="d-icon-heart"></i>
                                 </a>
@@ -408,96 +411,11 @@
                                 }
                             }
                         }">
-                    <div class="blog-post mb-4">
-                        <article class="post post-frame overlay-zoom">
-                            <figure class="post-media">
-                                <a href="post-single.html">
-                                    <img src="assets/images/blog/frame/1.jpg" alt="Blog post" width="340" height="206"
-                                         style="background-color: #919fbc;" />
-                                </a>
-                                <div class="post-calendar">
-                                    <span class="post-day">19</span>
-                                    <span class="post-month">JAN</span>
-                                </div>
-                            </figure>
-                            <div class="post-details">
-                                <h4 class="post-title">
-                                    <a href="post-single.html">
-                                        20% Off Coupon for Cyber
-                                        Week
-                                    </a>
-                                </h4>
-                                <p class="post-content">
-                                    Lorem ipsum dolor sit amet,onadipiscing elit, sedsd
-                                    doeiu smod tempo...
-                                </p>
-                                <a href="post-single.html" class="btn btn-primary btn-link btn-underline">
-                                    Read
-                                    More<i class="d-icon-arrow-right"></i>
-                                </a>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="blog-post mb-4">
-                        <article class="post post-frame overlay-zoom">
-                            <figure class="post-media">
-                                <a href="post-single.html">
-                                    <img src="assets/images/blog/frame/2.jpg" alt="Blog post" width="340" height="206"
-                                         style="background-color: #e5e6e6;" />
-                                </a>
-                                <div class="post-calendar">
-                                    <span class="post-day">19</span>
-                                    <span class="post-month">JAN</span>
-                                </div>
-                            </figure>
-                            <div class="post-details">
-                                <h4 class="post-title">
-                                    <a href="post-single.html">
-                                        20% Off Coupon for Cyber
-                                        Week
-                                    </a>
-                                </h4>
-                                <p class="post-content">
-                                    Lorem ipsum dolor sit amet,onadipiscing elit, sedsd
-                                    doeiu smod tempo...
-                                </p>
-                                <a href="post-single.html" class="btn btn-primary btn-link btn-underline">
-                                    Read
-                                    More<i class="d-icon-arrow-right"></i>
-                                </a>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="blog-post mb-4">
-                        <article class="post post-frame overlay-zoom">
-                            <figure class="post-media">
-                                <a href="post-single.html">
-                                    <img src="assets/images/blog/frame/3.jpg" alt="Blog post" width="340" height="206"
-                                         style="background-color: #eaeef1;" />
-                                </a>
-                                <div class="post-calendar">
-                                    <span class="post-day">19</span>
-                                    <span class="post-month">JAN</span>
-                                </div>
-                            </figure>
-                            <div class="post-details">
-                                <h4 class="post-title">
-                                    <a href="post-single.html">
-                                        20% Off Coupon for Cyber
-                                        Week
-                                    </a>
-                                </h4>
-                                <p class="post-content">
-                                    Lorem ipsum dolor sit amet,onadipiscing elit, sedsd
-                                    doeiu smod tempo...
-                                </p>
-                                <a href="post-single.html" class="btn btn-primary btn-link btn-underline">
-                                    Read
-                                    More<i class="d-icon-arrow-right"></i>
-                                </a>
-                            </div>
-                        </article>
-                    </div>
+
+
+
+                    @await Component.InvokeAsync("Blog")
+
                 </div>
             </div>
         </section>

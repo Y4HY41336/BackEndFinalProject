@@ -127,14 +127,14 @@
 
                                 <div class="post">
                                     <figure class="post-media">
-                                        <a href="#">
+                                        <a asp-action="BlogDetail" asp-controller="Blog" asp-route-id="@blog.Id">
                                             <img src="~/assets/images/blog/@blog.PosterImage" width="380" height="250"
                                                  alt="post" />
                                         </a>
                                     </figure>
                                     <div class="post-details">
                                         <h4 class="post-title">
-                                            <a href="post-single.html">
+                                            <a asp-action="BlogDetail" asp-controller="Blog" asp-route-id="@blog.Id">
                                                 @blog.Title
                                             </a>
                                         </h4>

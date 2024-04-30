@@ -18,5 +18,6 @@ public class AppDbContext : IdentityDbContext<AppUser>
     public DbSet<Comment> Comments { get; set; }
     public DbSet<Topic> Topics { get; set; }
 	public DbSet<BlogTopic> BlogTopics { get; set; }
+    public DbSet<BasketItem> BasketItems { get; set; }
 
 }
