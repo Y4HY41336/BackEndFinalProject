@@ -45,6 +45,7 @@ public class AuthController : Controller
         {
             return View();
         }
+
         var user = await _userManager.FindByNameAsync(model.UsernameOrEmail);
         if (user == null)
         {
@@ -58,6 +59,12 @@ public class AuthController : Controller
         if (!await _userManager.IsEmailConfirmedAsync(user))
         {
             ModelState.AddModelError("", "Please confirm your email address");
+            return View(model);
+        }
+
+        if (!user.IsActive)
+        {
+            ModelState.AddModelError("", "You are banned");
             return View(model);
         }
 
