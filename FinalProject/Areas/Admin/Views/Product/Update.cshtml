@@ -76,6 +76,15 @@
                             <input type="file" class="form-control" asp-for="PosterImage" placeholder="Image">
                             <span asp-validation-for="PosterImage" class="text-danger"></span>
                         </div>
+                        @if (Model.Images != null)
+                        {
+                            @foreach (var image in Model.Images)
+                            {
+                                <img class="card-img-top" src="~/assets/images/shop/@Model.PosterImage" style="max-width: 300px; max-height: 300px" alt="Card image cap">
+                            }
+
+                        }
+
                         <div class="form-group">
                             <label for="exampleFormControlSelect2">Categories</label>
                             <select class="form-control" id="exampleFormControlSelect2" name="categoryId">

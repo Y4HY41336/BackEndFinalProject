@@ -1,0 +1,31 @@
+﻿@using FinalProject.Areas.Admin.ViewModel;
+
+@{
+    ViewData["Title"] = "ChangeRoles";
+}
+
+@model UserRolesViewModel
+
+<form method="post">
+    <div>
+        <h4>User: @Model.UserName</h4>
+        <h5>Current Roles:</h5>
+        <input type="hidden" value="@Model.UserId" asp-for="UserId" />
+        <ul>
+            @foreach (var role in Model.UserRoles)
+            {
+                <li style="list-style:none">@role</li>
+            }
+        </ul>
+        <h5>Select Roles:</h5>
+        @foreach (var role in Model.AllRoles)
+        {
+            <div>
+                <input type="checkbox" name="selectedRoles" value="@role.Name" @(Model.UserRoles.Contains(role.Name) ? "checked" : "") />
+                <label>@role.Name</label>
+            </div>
+        }
+    </div>
+    <button type="submit">Update Roles</button>
+</form>
+

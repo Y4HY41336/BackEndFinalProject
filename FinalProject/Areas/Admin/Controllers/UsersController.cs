@@ -85,36 +85,55 @@ public class UsersController : Controller
 
     }
 
-    //public async Task<IActionResult> UpdateRole(string id)
-    //{
-    //    ViewBag.AllRoles = await _roleManager.Roles.ToListAsync();
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> ChangeRoles(string id)
+    {
+        var user = await _userManager.FindByNameAsync(id);
+        if (user == null)
+        {
+            return NotFound();
+        }
 
-    //    var user = await _userManager.FindByNameAsync(id);
-    //    var roles = await _userManager.GetRolesAsync(user);
+        var roles = await _roleManager.Roles.ToListAsync();
+        var userRoles = await _userManager.GetRolesAsync(user);
 
-    //    if (user == null)
-    //    {
-    //        return NotFound();
-    //    }
+        var model = new UserRolesViewModel
+        {
+            UserId = user.Id,
+            UserName = user.UserName,
+            UserRoles = userRoles,
+            AllRoles = roles
+        };
 
-    //    UserViewModel model = new()
-    //    {
-    //        User = user,
-    //        Roles = roles
-    //    };
+        return View(model);
+    }
+    [HttpPost]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> ChangeRoles(UserRolesViewModel model)
+    {
+        var user = await _userManager.FindByIdAsync(model.UserId);
+        if (user == null)
+        {
+            return NotFound();
+        }
 
-    //    return View(model);
-    //}
+        var selectedRoles = model.SelectedRoles ?? new string[] { };
+        var userRoles = await _userManager.GetRolesAsync(user);
 
+        var result = await _userManager.AddToRolesAsync(user, selectedRoles.Except(userRoles));
+        if (!result.Succeeded)
+        {
+            ModelState.AddModelError("", "Failed to add selected roles to user.");
+            return View(model);
+        }
 
-    //[HttpPost]
-    //public async Task<IActionResult> UpdateRole(string id, UserUpdateViewModel model)
-    //{
-    //    var user = await _userManager.FindByNameAsync(id);
-    //    UserViewModel users = new();
+        result = await _userManager.RemoveFromRolesAsync(user, userRoles.Except(selectedRoles));
+        if (!result.Succeeded)
+        {
+            ModelState.AddModelError("", "Failed to remove deselected roles from user.");
+            return View(model);
+        }
 
-    //    await _context.SaveChangesAsync();
-
-    //    return RedirectToAction(nameof(Index));
-    //}
+        return RedirectToAction("Index");
+    }
 }

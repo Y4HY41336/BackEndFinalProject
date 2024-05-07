@@ -196,6 +196,7 @@ public class ProductController : Controller
         ViewBag.Categories = await _context.Categories.ToListAsync();
         ViewBag.Brands = await _context.Brands.ToListAsync();
         var products = await _context.Products.FirstOrDefaultAsync(p => p.Id == id && !p.isDeleted);
+        var images = await _context.ProductImages.Where(p => p.ProductId == id).ToListAsync();
         if (products == null)
         {
             return NotFound();
@@ -216,6 +217,8 @@ public class ProductController : Controller
             BrandId = products.BrandId,
             CategoryId = products.CategoryId,
             isStocked = true,
+
+            
         };
 
         return View(model);
@@ -231,6 +234,7 @@ public class ProductController : Controller
         ViewBag.Categories = await _context.Categories.ToListAsync();
         ViewBag.Brands = await _context.Brands.ToListAsync();
         var updateProduct = await _context.Products.FirstOrDefaultAsync(p => p.Id == id && !p.isDeleted);
+        var updateImages = await _context.ProductImages.Where(p => p.ProductId == id).ToListAsync();
         if (products == null)
         {
             return NotFound();
@@ -267,6 +271,7 @@ public class ProductController : Controller
             }
             updateProduct.PosterImage = fileName;
         }
+
 
         updateProduct.Title = products.Title;
         updateProduct.Price = products.Price;

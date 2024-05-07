@@ -31,6 +31,6 @@ namespace FinalProject.Areas.Admin.ViewModel
         public int CategoryId { get; set; }
         public int BrandId { get; set; }
         public IFormFile? PosterImage { get; set; }
-        //public List<IFormFile> Images { get; set; }
+        public List<IFormFile>? Images { get; set; }
     }
 }
